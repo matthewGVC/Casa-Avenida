@@ -168,6 +168,24 @@ export function getFloorplanInfoTab(unitId: string): string {
   return tabs[unitId] ?? "";
 }
 
+/**
+ * Resolves the full public src path for a gallery image.
+ * Accounts for the subdirectory structure:
+ *   Brisa renders → /images/gallery/Brisa Finishes/
+ *   Noir renders  → /images/gallery/Noir Finishes/
+ *   Exteriors     → /images/gallery/
+ */
+export function getGalleryImageSrc(img: GalleryImage): string {
+  const base = "/images/gallery";
+  if (img.finishContext === "brisa") {
+    return `${base}/Brisa Finishes/${img.filename}`;
+  }
+  if (img.finishContext === "noir") {
+    return `${base}/Noir Finishes/${img.filename}`;
+  }
+  return `${base}/${img.filename}`;
+}
+
 // ── Helpers ───────────────────────────────────
 
 /**

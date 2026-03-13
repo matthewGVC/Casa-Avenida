@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { GalleryImage } from "@/lib/types";
 
 import ScrollFade from "@/components/animations/ScrollFade";
-import { BLUR_DATA_URL } from "@/lib/content";
+import { BLUR_DATA_URL, getGalleryImageSrc } from "@/lib/content";
 
 interface GalleryTeaserProps {
   images: GalleryImage[];
@@ -54,7 +54,7 @@ export default function GalleryTeaser({ images }: GalleryTeaserProps) {
               >
                 <div className="relative w-full aspect-[4/3]">
                   <Image
-                    src={`/images/gallery/${encodeURIComponent(img.filename)}`}
+                    src={getGalleryImageSrc(img)}
                     alt={img.alt}
                     fill
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-700"

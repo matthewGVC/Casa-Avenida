@@ -1,25 +1,25 @@
 {
   "logos": {
-    "gold": "/images/logos/Casa Avenida - Gold Bronze.svg",
-    "white": "/images/logos/Casa Avenida - White.svg",
-    "dark": "/images/logos/Casa Avenida - Slate.svg",
-    "monogram": "/images/logos/A Logo.webp",
-    "monogramPng": "/images/logos/A.png",
-    "appIcon": "/images/logos/APP ICON - LR.png",
-    "faviconDark": "/images/logos/DARK - CA Favicon.svg",
-    "faviconLight": "/images/logos/LIGHT - CA Favicon.svg"
+    "gold": "/images/logos/casa avenida logos/Casa Avenida - Gold Bronze.svg",
+    "white": "/images/logos/casa avenida logos/Casa Avenida - White.svg",
+    "dark": "/images/logos/casa avenida logos/Casa Avenida - Slate.svg",
+    "monogram": "/images/logos/casa avenida logos/A Logo.webp",
+    "monogramPng": "/images/logos/casa avenida logos/A.png",
+    "appIcon": "/images/logos/casa avenida logos/APP ICON - LR.png",
+    "faviconDark": "/images/logos/casa avenida logos/DARK - CA Favicon.svg",
+    "faviconLight": "/images/logos/casa avenida logos/LIGHT - CA Favicon.svg"
   },
-  "ogDefault": "/images/logos/SOCIAL PREVIEW - IMAGE.png",
+  "ogDefault": "/images/logos/casa avenida logos/SOCIAL PREVIEW - IMAGE.png",
   "partnerLogos": {
-    "kastelo": "/images/logos/kastelo logo.png",
-    "kasteloBadge": "/images/logos/Kastelo Badge - Black.png",
-    "kasteloInline": "/images/logos/Kastelo In Line - Black.png",
-    "tro": "/images/logos/4tro logo light.png",
-    "troDark": "/images/logos/4TRO - Black.png",
-    "rwbLinares": "/images/logos/RWBL_logo-gold.png",
-    "douglasElliman": "/images/logos/GVC LOGO.png",
-    "avaGray": "/images/logos/AvaGray-Gold (1).png",
-    "stefLeonel": "/images/logos/TCG_Gold.png"
+    "kastelo": "/images/logos/team logos/kastelo logo.png",
+    "kasteloBadge": "/images/logos/team logos/Kastelo Badge - Black.png",
+    "kasteloInline": "/images/logos/team logos/Kastelo In Line - Black.png",
+    "tro": "/images/logos/team logos/4tro logo light.png",
+    "troDark": "/images/logos/team logos/4TRO - Black.png",
+    "rwbLinares": "/images/logos/team logos/RWBL_logo-gold.png",
+    "douglasElliman": "/images/logos/team logos/GVC LOGO.png",
+    "avaGray": "/images/logos/team logos/AvaGray-Gold (1).png",
+    "stefLeonel": "/images/logos/team logos/TCG_Gold.png"
   },
   "teamPhotos": {
     "gvcTeam": "/images/team/GVC TEAM PHOTO.webp",
