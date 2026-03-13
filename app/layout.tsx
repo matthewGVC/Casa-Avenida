@@ -4,6 +4,8 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
+import BackToTop from "@/components/layout/BackToTop";
+import MobileInquireBar from "@/components/layout/MobileInquireBar";
 import "@/styles/globals.css";
 
 const raleway = Raleway({
@@ -71,6 +73,8 @@ export default function RootLayout({
         </main>
 
         <Footer />
+        <BackToTop />
+        <MobileInquireBar />
         <CookieBanner />
         <Analytics />
       </body>
