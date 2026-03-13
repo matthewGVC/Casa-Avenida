@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { encodeImagePath } from '@/lib/content';
 import Image from "next/image";
 import type { Article } from "@/lib/types";
 import { BLUR_DATA_URL } from "@/lib/content";
@@ -27,7 +28,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       {hasImage && (
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
-            src={article.coverImage}
+            src={encodeImagePath(article.coverImage)}
             alt={article.title}
             fill
             className="object-cover group-hover:scale-[1.02] transition-transform duration-700"

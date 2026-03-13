@@ -6,7 +6,7 @@ import Image from "next/image";
 import type { Unit } from "@/lib/types";
 import Badge from "@/components/ui/Badge";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import { BLUR_DATA_URL } from "@/lib/content";
+import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
 
 interface ResidenceTeaserProps {
   units: Unit[];
@@ -106,7 +106,7 @@ function UnitCard({ unit }: { unit: Unit }) {
       {/* Background image or placeholder */}
       {unit.heroImage ? (
         <Image
-          src={unit.heroImage}
+          src={encodeImagePath(unit.heroImage)}
           alt={unit.name}
           fill
           className="object-cover group-hover:scale-[1.03] transition-transform duration-700"

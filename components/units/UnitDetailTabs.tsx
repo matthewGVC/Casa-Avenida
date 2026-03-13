@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Unit, FinishesPackage } from "@/lib/types";
 import FloorplanViewer from "@/components/units/FloorplanViewer";
-import { BLUR_DATA_URL, formatSF } from "@/lib/content";
+import { BLUR_DATA_URL, formatSF, encodeImagePath } from "@/lib/content";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 type TabId = "overview" | "floorplan" | "finishes" | "inquire";
@@ -68,7 +68,7 @@ export default function UnitDetailTabs({ unit, finishes, initialTab = "overview"
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px]">
                   {unit.heroImage ? (
                     <Image
-                      src={unit.heroImage}
+                      src={encodeImagePath(unit.heroImage)}
                       alt={`${unit.name} — ${unit.tagline}`}
                       fill
                       className="object-cover"
@@ -186,7 +186,7 @@ export default function UnitDetailTabs({ unit, finishes, initialTab = "overview"
                     <div className="relative aspect-[4/3]">
                       {pkg.heroImage ? (
                         <Image
-                          src={pkg.heroImage}
+                          src={encodeImagePath(pkg.heroImage)}
                           alt={`${pkg.name} finish package`}
                           fill
                           className="object-cover"

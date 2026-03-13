@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getTeamMembers, BLUR_DATA_URL } from "@/lib/content";
+import { getTeamMembers, BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import ScrollFade from "@/components/animations/ScrollFade";
 
@@ -92,7 +92,7 @@ function MemberCard({ member }: { member: ReturnType<typeof getTeamMembers>[numb
       <div className="relative w-16 h-16 shrink-0 overflow-hidden">
         {hasImage ? (
           <Image
-            src={member.image}
+            src={encodeImagePath(member.image)}
             alt={member.name}
             fill
             className="object-contain"

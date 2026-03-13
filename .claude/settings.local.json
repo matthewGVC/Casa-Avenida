@@ -19,7 +19,8 @@
       "Bash(while read:*)",
       "Bash(do touch:*)",
       "Bash(done)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(grep -n \"from ''''@/lib/content''''\\\\|encodeImagePath\" \"app/news/[slug]/page.tsx\")"
     ]
   }
 }

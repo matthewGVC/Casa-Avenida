@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Agent } from "@/lib/types";
-import { BLUR_DATA_URL, formatPhone } from "@/lib/content";
+import { BLUR_DATA_URL, formatPhone, encodeImagePath } from "@/lib/content";
 
 interface AgentCardProps {
   agent: Agent;
@@ -16,7 +16,7 @@ export default function AgentCard({ agent }: AgentCardProps) {
       <div className="relative w-16 h-16 lg:w-20 lg:h-20 shrink-0 overflow-hidden bg-white/5">
         {hasPhoto ? (
           <Image
-            src={agent.headshot}
+            src={encodeImagePath(agent.headshot)}
             alt={agent.name}
             fill
             className="object-cover"

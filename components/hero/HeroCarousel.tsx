@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import { BLUR_DATA_URL } from "@/lib/content";
+import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
 
 interface HeroCarouselProps {
   images: string[];
@@ -56,7 +56,7 @@ export default function HeroCarousel({ images }: HeroCarouselProps) {
             }}
           >
             <Image
-              src={src}
+              src={encodeImagePath(src)}
               alt=""
               fill
               priority={i === 0}

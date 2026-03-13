@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getArticle, getArticles, BLUR_DATA_URL } from "@/lib/content";
+import { getArticle, getArticles, BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
 import type { ArticleBlock } from "@/lib/types";
 import SubscribeForm from "@/components/news/SubscribeForm";
 import ScrollFade from "@/components/animations/ScrollFade";
@@ -93,7 +93,7 @@ export default function ArticlePage({ params }: Props) {
           <div className="max-w-3xl mx-auto">
             <div className="relative w-full aspect-[16/9]">
               <Image
-                src={article.coverImage}
+                src={encodeImagePath(article.coverImage)}
                 alt={article.title}
                 fill
                 className="object-cover"

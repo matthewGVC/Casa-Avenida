@@ -178,15 +178,35 @@ export function getFloorplanInfoTab(unitId: string): string {
 export function getGalleryImageSrc(img: GalleryImage): string {
   const base = "/images/gallery";
   if (img.finishContext === "brisa") {
-    return `${base}/Brisa Finishes/${img.filename}`;
+    return encodeImagePath(`${base}/Brisa Finishes/${img.filename}`);
   }
   if (img.finishContext === "noir") {
-    return `${base}/Noir Finishes/${img.filename}`;
+    return encodeImagePath(`${base}/Noir Finishes/${img.filename}`);
   }
-  return `${base}/${img.filename}`;
+  return encodeImagePath(`${base}/${img.filename}`);
 }
 
 // ── Helpers ───────────────────────────────────
+
+/**
+ * Encodes a local image path for safe use as an HTML/HTTP src attribute.
+ * Encodes each path segment individually, preserving the leading slash and
+ * all directory separators. This handles file names and folder names that
+ * contain spaces, parentheses, or other characters that are invalid in URLs.
+ *
+ * Example: "/images/gallery/Brisa Finishes/Living Angle 1.jpg"
+ *       →  "/images/gallery/Brisa%20Finishes/Living%20Angle%201.jpg"
+ */
+export function encodeImagePath(path: string): string {
+  if (!path) return path;
+  // Split on '/', encode each segment, rejoin. Leading '/' produces an empty
+  // first element which encodeURIComponent('') returns as '' — so the slash
+  // structure is preserved correctly.
+  return path
+    .split("/")
+    .map((seg) => encodeURIComponent(seg))
+    .join("/");
+}
 
 /**
  * Format a phone number for display: +15617993000 → (561) 799-3000

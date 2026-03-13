@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getFinishesPackages, BLUR_DATA_URL } from "@/lib/content";
+import { getFinishesPackages, BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import ScrollFade from "@/components/animations/ScrollFade";
 
@@ -70,7 +70,7 @@ export default function FinishesPage() {
                 <div className="relative aspect-[4/3]">
                   {pkg.heroImage ? (
                     <Image
-                      src={pkg.heroImage}
+                      src={encodeImagePath(pkg.heroImage)}
                       alt={`${pkg.name} finish collection`}
                       fill
                       className="object-cover"
