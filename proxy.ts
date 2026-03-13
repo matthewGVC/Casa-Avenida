@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * Edge Middleware — rate limiting for API routes.
+ * Edge Proxy — rate limiting for API routes.
  * Implements a simple in-memory sliding window per IP.
  * Max 20 requests per minute per IP to /api/ routes.
  *
  * Note: In-memory state resets on each cold start.
  * For production with multiple Edge replicas, pair with Upstash Redis.
+ *
+ * Renamed from middleware.ts → proxy.ts for Next.js 16 compatibility.
  */
 
 const RATE_LIMIT = 20;           // requests
@@ -23,7 +25,7 @@ function getClientIp(req: NextRequest): string {
   );
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Only rate-limit API routes
