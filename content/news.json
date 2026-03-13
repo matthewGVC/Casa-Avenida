@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "haven-june-2025",
+    "title": "Haven — Summer 2025",
+    "excerpt": "A look at the Delray Beach market this summer, the latest on Casa Avenida's progress, and the lifestyle awaiting residents just one block from Atlantic Avenue.",
+    "date": "2025-06-15",
+    "coverImage": "/images/gallery/Exterior 1.jpg",
+    "tags": ["Market Updates", "Lifestyle", "Development Progress"]
+  },
+  {
+    "slug": "haven-october-2025",
+    "title": "Haven — Fall 2025",
+    "excerpt": "As South Florida's peak season approaches, we explore what makes Delray Beach the most sought-after address in Palm Beach County, and share updates from the Casa Avenida site.",
+    "date": "2025-10-01",
+    "coverImage": "/images/gallery/Exterior 2.jpg",
+    "tags": ["Market Updates", "Development Progress"]
+  },
+  {
+    "slug": "haven-november-2025",
+    "title": "Haven — November 2025",
+    "excerpt": "This month we take a closer look at the two finish collections — Brisa and Noir — and explore the design philosophies that shaped them.",
+    "date": "2025-11-01",
+    "coverImage": "/images/gallery/Living Angle 1.jpg",
+    "tags": ["Lifestyle"]
+  },
+  {
+    "slug": "haven-january-2026",
+    "title": "Haven — January 2026",
+    "excerpt": "The new year brings fresh energy to the Casa Avenida site. We share construction milestones, market insights, and a preview of what life at 102 SE 5th Ave will feel like.",
+    "date": "2026-01-10",
+    "coverImage": "/images/gallery/Living Angle 2.jpg",
+    "tags": ["Development Progress", "Market Updates"]
+  }
+]

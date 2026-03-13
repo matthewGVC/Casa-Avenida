@@ -1,0 +1,47 @@
+{
+  "logos": {
+    "gold": "/images/logos/Casa Avenida - Gold Bronze.svg",
+    "white": "/images/logos/Casa Avenida - White.svg",
+    "dark": "/images/logos/Casa Avenida - Slate.svg",
+    "monogram": "/images/logos/A Logo.webp",
+    "monogramPng": "/images/logos/A.png",
+    "appIcon": "/images/logos/APP ICON - LR.png",
+    "faviconDark": "/images/logos/DARK - CA Favicon.svg",
+    "faviconLight": "/images/logos/LIGHT - CA Favicon.svg"
+  },
+  "ogDefault": "/images/logos/SOCIAL PREVIEW - IMAGE.png",
+  "partnerLogos": {
+    "kastelo": "/images/logos/kastelo logo.png",
+    "kasteloBadge": "/images/logos/Kastelo Badge - Black.png",
+    "kasteloInline": "/images/logos/Kastelo In Line - Black.png",
+    "tro": "/images/logos/4tro logo light.png",
+    "troDark": "/images/logos/4TRO - Black.png",
+    "rwbLinares": "/images/logos/RWBL_logo-gold.png",
+    "douglasElliman": "/images/logos/GVC LOGO.png",
+    "avaGray": "/images/logos/AvaGray-Gold (1).png",
+    "stefLeonel": "/images/logos/TCG_Gold.png"
+  },
+  "teamPhotos": {
+    "gvcTeam": "/images/team/GVC TEAM PHOTO.webp",
+    "headerTeam": "/images/team/Header Team Photo - BG Extended copy (1) copy.webp",
+    "kastelo": "/images/team/Kostelo image.webp"
+  },
+  "hero": [
+    "/images/hero/hero-01.jpg",
+    "/images/hero/hero-02.jpg",
+    "/images/hero/hero-03.jpg",
+    "/images/hero/hero-04.jpg",
+    "/images/hero/hero-05.jpg",
+    "/images/hero/hero-06.jpg"
+  ],
+  "floorplanInfoTabs": {
+    "unit-1": "/images/floorplans/1 FP Info Tab.webp",
+    "unit-2": "/images/floorplans/2 FP Info Tab.webp",
+    "unit-3": "/images/floorplans/3 FP Info Tab.webp",
+    "unit-4": "/images/floorplans/4 FP Info Tab.webp",
+    "unit-5": "/images/floorplans/5 FP Info Tab.webp",
+    "unit-6": "/images/floorplans/6 FP Info Tab.webp",
+    "unit-7": "/images/floorplans/7 FP Info Tab.webp",
+    "unit-8": "/images/floorplans/8 FP Info Tab.webp"
+  }
+}

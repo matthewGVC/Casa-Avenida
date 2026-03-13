@@ -1,0 +1,102 @@
+[
+  {
+    "id": "brisa",
+    "name": "Brisa",
+    "tagline": "Warmth. Light. Coastal refinement.",
+    "description": "The Brisa collection draws its spirit from the sea breeze and the warmth of the South Florida sun. Natural oak, stone in honey and cream tones, and soft warm metals create an interior of effortless coastal luxury — luminous by day, intimate by evening.",
+    "heroImage": "/images/gallery/Living Angle 1.jpg",
+    "swatches": [
+      {
+        "category": "Flooring",
+        "items": [
+          {
+            "name": "Warm Oak Wide Plank",
+            "image": "",
+            "description": "European oak in a warm honey stain, engineered plank flooring throughout living areas"
+          }
+        ]
+      },
+      {
+        "category": "Cabinetry",
+        "items": [
+          {
+            "name": "Natural Oak Flat Panel",
+            "image": "",
+            "description": "Flat-panel cabinetry in natural oak veneer with integrated pulls"
+          }
+        ]
+      },
+      {
+        "category": "Countertops",
+        "items": [
+          {
+            "name": "Calacatta Cream Marble",
+            "image": "",
+            "description": "Calacatta cream marble with warm gold veining, honed finish"
+          }
+        ]
+      },
+      {
+        "category": "Fixtures",
+        "items": [
+          {
+            "name": "Brushed Gold",
+            "image": "",
+            "description": "Brushed gold hardware and plumbing fixtures throughout"
+          }
+        ]
+      }
+    ],
+    "pdf": "/pdfs/finishes/Brisa Tear Sheet.pdf"
+  },
+  {
+    "id": "noir",
+    "name": "Noir",
+    "tagline": "Depth. Drama. Architectural precision.",
+    "description": "The Noir collection is a study in contrast and restraint — dark quartzite and charcoal oak against crisp white ceilings, with burnished bronze detailing throughout. An interior of quiet power, where every surface speaks with architectural confidence.",
+    "heroImage": "/images/gallery/Living Angle 1.jpg",
+    "swatches": [
+      {
+        "category": "Flooring",
+        "items": [
+          {
+            "name": "Charcoal Oak Wide Plank",
+            "image": "",
+            "description": "European oak in a deep charcoal stain, engineered plank flooring throughout living areas"
+          }
+        ]
+      },
+      {
+        "category": "Cabinetry",
+        "items": [
+          {
+            "name": "Dark Flat Panel with Bronze",
+            "image": "",
+            "description": "Flat-panel cabinetry in dark rift-cut oak with burnished bronze integrated pulls"
+          }
+        ]
+      },
+      {
+        "category": "Countertops",
+        "items": [
+          {
+            "name": "Black Quartzite Slab",
+            "image": "",
+            "description": "Black quartzite with gold and grey veining, leathered finish on island; honed on perimeter"
+          }
+        ]
+      },
+      {
+        "category": "Fixtures",
+        "items": [
+          {
+            "name": "Burnished Bronze",
+            "image": "",
+            "description": "Burnished bronze hardware and plumbing fixtures throughout"
+          }
+        ]
+      }
+    ],
+    "pdf": "/pdfs/finishes/Noir Tear Sheet.pdf"
+  }
+]

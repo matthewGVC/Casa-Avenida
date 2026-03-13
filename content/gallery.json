@@ -1,0 +1,564 @@
+[
+  {
+    "id": "ext-1",
+    "filename": "Exterior 1.jpg",
+    "title": "Casa Avenida — Street Elevation",
+    "category": "exterior",
+    "alt": "Casa Avenida street-facing elevation render, Delray Beach"
+  },
+  {
+    "id": "ext-1-exp",
+    "filename": "Exterior 1 Expanded.jpg",
+    "title": "Casa Avenida — Expanded Street View",
+    "category": "exterior",
+    "alt": "Casa Avenida expanded street elevation showing full development context"
+  },
+  {
+    "id": "ext-2",
+    "filename": "Exterior 2.jpg",
+    "title": "Casa Avenida — Façade Detail",
+    "category": "exterior",
+    "alt": "Casa Avenida architectural façade detail render"
+  },
+  {
+    "id": "ext-3",
+    "filename": "Exterior 3.jpg",
+    "title": "Casa Avenida — Site Context",
+    "category": "exterior",
+    "alt": "Casa Avenida in neighborhood context render"
+  },
+  {
+    "id": "ext-pre",
+    "filename": "PreConstruct Shot.jpg",
+    "title": "102 SE 5th Ave — Pre-Construction Site",
+    "category": "exterior",
+    "alt": "102 SE 5th Ave, Delray Beach pre-construction site photograph"
+  },
+  {
+    "id": "ext-render",
+    "filename": "Rendered Shot.jpg",
+    "title": "Casa Avenida — Architectural Render",
+    "category": "exterior",
+    "alt": "Casa Avenida photorealistic architectural render"
+  },
+  {
+    "id": "brisa-living-1",
+    "filename": "Living Angle 1.jpg",
+    "title": "Living Room — Brisa",
+    "category": "living",
+    "alt": "Brisa finish living room with floor-to-ceiling windows and warm natural tones",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-living-2",
+    "filename": "Living Angle 2.jpg",
+    "title": "Living Room, Secondary Angle — Brisa",
+    "category": "living",
+    "alt": "Brisa finish living room secondary angle showing sofa arrangement",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-living-3",
+    "filename": "Living Angle 3.jpg",
+    "title": "Living Room, Wide View — Brisa",
+    "category": "living",
+    "alt": "Brisa finish living room wide view showing open-plan layout",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-dining-1",
+    "filename": "Dining Angle 1.jpg",
+    "title": "Dining Room — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish dining room with custom lighting and warm oak tones",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-dining-kitchen",
+    "filename": "Dining to Kitchen Straight.jpg",
+    "title": "Dining to Kitchen — Brisa",
+    "category": "kitchen",
+    "alt": "Brisa finish view from dining room through to open kitchen",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-kitchen-1",
+    "filename": "Kitchen Angle 1.jpg",
+    "title": "Kitchen — Brisa",
+    "category": "kitchen",
+    "alt": "Brisa finish chef's kitchen with custom cabinetry and stone countertops",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-kitchen-2",
+    "filename": "Kitchen Angle 2.jpg",
+    "title": "Kitchen, Island View — Brisa",
+    "category": "kitchen",
+    "alt": "Brisa finish kitchen island view with seating and pendant lighting",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-kitchen-3",
+    "filename": "Kitchen Angle 3.jpg",
+    "title": "Kitchen, Storage Detail — Brisa",
+    "category": "kitchen",
+    "alt": "Brisa finish kitchen showing full-height cabinetry and integrated appliances",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-kitchen-4",
+    "filename": "Kitchen Angle 4.jpg",
+    "title": "Kitchen, Wide View — Brisa",
+    "category": "kitchen",
+    "alt": "Brisa finish kitchen wide view showing connection to living and dining",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-backsplash",
+    "filename": "Backsplash Detail.jpg",
+    "title": "Kitchen Backsplash — Brisa",
+    "category": "kitchen",
+    "alt": "Brisa finish kitchen backsplash tile detail",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-primary-bed-1",
+    "filename": "Primary Bed 1.jpg",
+    "title": "Primary Suite — Brisa",
+    "category": "primary-suite",
+    "alt": "Brisa finish primary bedroom with custom millwork and natural light",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-primary-bed-2",
+    "filename": "Primary Bed 2.jpg",
+    "title": "Primary Suite, Alternate View — Brisa",
+    "category": "primary-suite",
+    "alt": "Brisa finish primary bedroom alternate angle showing seating area",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-primary-bath-1",
+    "filename": "Primary Bath 1.jpg",
+    "title": "Primary Bath — Brisa",
+    "category": "primary-suite",
+    "alt": "Brisa finish primary bathroom with freestanding tub and natural stone",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-primary-bath-2",
+    "filename": "Primary Bath 2.jpg",
+    "title": "Primary Bath, Vanity — Brisa",
+    "category": "primary-suite",
+    "alt": "Brisa finish primary bathroom vanity with double sinks and custom mirrors",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-primary-bath-3",
+    "filename": "Primary Bath 3.jpg",
+    "title": "Primary Bath, Shower — Brisa",
+    "category": "primary-suite",
+    "alt": "Brisa finish primary bathroom walk-in shower with stone tile",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-primary-bath-4",
+    "filename": "Primary Bath 4.jpg",
+    "title": "Primary Bath, Detail — Brisa",
+    "category": "primary-suite",
+    "alt": "Brisa finish primary bathroom material and fixture detail",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-terrace-1",
+    "filename": "Terrace Angle 1 v2.jpg",
+    "title": "Terrace — Brisa",
+    "category": "terrace",
+    "alt": "Brisa finish rooftop terrace with outdoor lounge and city views",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-terrace-2",
+    "filename": "Terrace Angle 2.jpg",
+    "title": "Terrace, Wide View — Brisa",
+    "category": "terrace",
+    "alt": "Brisa finish rooftop terrace wide view showing summer kitchen area",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-pool-1",
+    "filename": "Pool Angle 1.jpg",
+    "title": "Pool Garden — Brisa",
+    "category": "pool",
+    "alt": "Brisa finish private cocktail pool and garden on ground level",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-lounge-1",
+    "filename": "Lounge Angle 1.jpg",
+    "title": "Bonus Lounge — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish bonus lounge space with flexible seating arrangement",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-lounge-2",
+    "filename": "Lounge Angle 2.jpg",
+    "title": "Bonus Lounge, Angle 2 — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish bonus lounge secondary angle",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-lounge-3",
+    "filename": "Lounge Angle 3.jpg",
+    "title": "Bonus Lounge, Angle 3 — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish bonus lounge tertiary angle showing layout",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-lounge-4",
+    "filename": "Lounge Angle 4 - Wide.jpg",
+    "title": "Bonus Lounge, Wide — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish bonus lounge wide view showing full room",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-gameroom-1",
+    "filename": "Game Room 1.jpg",
+    "title": "Game Room — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish game room with entertainment and flex living space",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-gameroom-2",
+    "filename": "Game Room 2.jpg",
+    "title": "Game Room, Angle 2 — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish game room secondary angle",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-gameroom-3",
+    "filename": "Game Room 3.jpg",
+    "title": "Game Room, Wide — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish game room wide view",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-bonus-1",
+    "filename": "Bonus Lounge 1.jpg",
+    "title": "Bonus Room — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish bonus flex room with lounge seating",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-bonus-2",
+    "filename": "Bonus Lounge 2.jpg",
+    "title": "Bonus Room, Wide — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish bonus flex room wide angle",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-kids-1",
+    "filename": "Childrens Room 1.jpg",
+    "title": "Children's Bedroom — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish children's bedroom with custom built-ins",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-kids-2",
+    "filename": "Childrens Room 2.jpg",
+    "title": "Children's Bedroom, Wide — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish children's bedroom wide view",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "brisa-firstfloor-bed",
+    "filename": "1F Bed.jpg",
+    "title": "Ground Floor Bedroom — Brisa",
+    "category": "interiors",
+    "alt": "Brisa finish ground floor bedroom suite",
+    "finishContext": "brisa"
+  },
+  {
+    "id": "noir-living-1",
+    "filename": "Living Angle 1.jpg",
+    "title": "Living Room — Noir",
+    "category": "living",
+    "alt": "Noir finish living room with dramatic dark palette and sculptural lighting",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-living-2",
+    "filename": "Living Angle 2.jpg",
+    "title": "Living Room, Angle 2 — Noir",
+    "category": "living",
+    "alt": "Noir finish living room secondary angle showing fireplace feature",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-living-3",
+    "filename": "Living Angle 3.jpg",
+    "title": "Living Room, Wide — Noir",
+    "category": "living",
+    "alt": "Noir finish living room wide view with dark cabinetry and warm accents",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-dining-1",
+    "filename": "Dining Angle 1.jpg",
+    "title": "Dining Room — Noir",
+    "category": "interiors",
+    "alt": "Noir finish dining room with statement chandelier and dark marble",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-dining-2",
+    "filename": "Dining Angle 2.jpg",
+    "title": "Dining Room, Wide — Noir",
+    "category": "interiors",
+    "alt": "Noir finish dining room wide angle showing connection to living",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-dining-kitchen",
+    "filename": "Dining to Kitchen Straight.jpg",
+    "title": "Dining to Kitchen — Noir",
+    "category": "kitchen",
+    "alt": "Noir finish view from dining room through to open kitchen",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-kitchen-1",
+    "filename": "Kitchen Update Angle 1.jpg",
+    "title": "Kitchen — Noir",
+    "category": "kitchen",
+    "alt": "Noir finish kitchen with dark cabinetry, marble waterfall island",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-kitchen-2",
+    "filename": "Kitchen Update Angle 2.jpg",
+    "title": "Kitchen, Island View — Noir",
+    "category": "kitchen",
+    "alt": "Noir finish kitchen island with dramatic dark stone and brass fixtures",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-kitchen-3",
+    "filename": "Kitchen Update Angle 3.jpg",
+    "title": "Kitchen, Storage — Noir",
+    "category": "kitchen",
+    "alt": "Noir finish kitchen full-height dark cabinetry with integrated appliances",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-kitchen-4",
+    "filename": "Kitchen Update Angle 4.jpg",
+    "title": "Kitchen, Wide View — Noir",
+    "category": "kitchen",
+    "alt": "Noir finish kitchen wide view showing connection to open living plan",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-backsplash",
+    "filename": "Kitchen Backsplash Detail.jpg",
+    "title": "Kitchen Backsplash — Noir",
+    "category": "kitchen",
+    "alt": "Noir finish kitchen backsplash slab stone detail",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-primary-bed-1",
+    "filename": "Primary Bed Angle 1 - Wide.jpg",
+    "title": "Primary Suite — Noir",
+    "category": "primary-suite",
+    "alt": "Noir finish primary bedroom with dramatic dark palette and bespoke millwork",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-primary-bed-2",
+    "filename": "Primary Bed Angle 1 - Portrait.jpg",
+    "title": "Primary Suite, Portrait — Noir",
+    "category": "primary-suite",
+    "alt": "Noir finish primary bedroom portrait view showing headboard wall",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-primary-bath-1",
+    "filename": "Primary Bath - Tub Angle 1.jpg",
+    "title": "Primary Bath, Tub View — Noir",
+    "category": "primary-suite",
+    "alt": "Noir finish primary bathroom freestanding tub with dark stone surround",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-primary-bath-2",
+    "filename": "Primary Bath - Tub Angle 2.jpg",
+    "title": "Primary Bath, Tub Angle 2 — Noir",
+    "category": "primary-suite",
+    "alt": "Noir finish primary bathroom tub secondary angle",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-primary-bath-3",
+    "filename": "Primary Bath - Tub Angle 3.jpg",
+    "title": "Primary Bath, Wide — Noir",
+    "category": "primary-suite",
+    "alt": "Noir finish primary bathroom wide view showing full material palette",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-primary-bath-mirror",
+    "filename": "Primary Bath - Mirror Angle.jpg",
+    "title": "Primary Bath, Mirror — Noir",
+    "category": "primary-suite",
+    "alt": "Noir finish primary bathroom vanity mirror with dark veined marble",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-terrace-1",
+    "filename": "Terrace Angle 1 v2.jpg",
+    "title": "Terrace — Noir",
+    "category": "terrace",
+    "alt": "Noir finish rooftop terrace with dark outdoor furniture and evening ambiance",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-terrace-2",
+    "filename": "Terrace Angle 2.jpg",
+    "title": "Terrace, Wide View — Noir",
+    "category": "terrace",
+    "alt": "Noir finish rooftop terrace wide view with summer kitchen",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-pool-1",
+    "filename": "Pool Angle 1.jpg",
+    "title": "Pool Garden — Noir",
+    "category": "pool",
+    "alt": "Noir finish private cocktail pool and garden with dark tile surround",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-lounge-1",
+    "filename": "Lounge Angle 1 - Wide.jpg",
+    "title": "Bonus Lounge — Noir",
+    "category": "interiors",
+    "alt": "Noir finish bonus lounge with dark upholstery and layered lighting",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-lounge-2",
+    "filename": "Lounge Angle 2 - Wide.jpg",
+    "title": "Bonus Lounge, Angle 2 — Noir",
+    "category": "interiors",
+    "alt": "Noir finish bonus lounge secondary wide angle",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-lounge-3",
+    "filename": "Lounge Angle 3 - Wide.jpg",
+    "title": "Bonus Lounge, Angle 3 — Noir",
+    "category": "interiors",
+    "alt": "Noir finish bonus lounge tertiary wide angle",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-lounge-4",
+    "filename": "Lounge Angle 4 - Wide.jpg",
+    "title": "Bonus Lounge, Wide — Noir",
+    "category": "interiors",
+    "alt": "Noir finish bonus lounge full room wide view",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-bonus-1",
+    "filename": "Bonus Lounge Angle 1 - V2.jpg",
+    "title": "Bonus Room — Noir",
+    "category": "interiors",
+    "alt": "Noir finish bonus flex room with dark design language",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-bonus-2",
+    "filename": "Bonus Lounge Angle 2 - V2.jpg",
+    "title": "Bonus Room, Wide — Noir",
+    "category": "interiors",
+    "alt": "Noir finish bonus flex room wide view",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-gameroom-1",
+    "filename": "Game Room Angle 1.jpg",
+    "title": "Game Room — Noir",
+    "category": "interiors",
+    "alt": "Noir finish game room with dramatic lighting and dark material palette",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-gameroom-blue",
+    "filename": "Game Room Angle 1 Blue .jpg",
+    "title": "Game Room, Evening — Noir",
+    "category": "interiors",
+    "alt": "Noir finish game room with blue ambient lighting at evening",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-gameroom-2",
+    "filename": "Game Room Angle 2.jpg",
+    "title": "Game Room, Angle 2 — Noir",
+    "category": "interiors",
+    "alt": "Noir finish game room secondary angle",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-gameroom-3",
+    "filename": "Game Room Angle 3.jpg",
+    "title": "Game Room, Angle 3 — Noir",
+    "category": "interiors",
+    "alt": "Noir finish game room tertiary angle",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-gameroom-4",
+    "filename": "Game Room Angle 4.jpg",
+    "title": "Game Room, Wide — Noir",
+    "category": "interiors",
+    "alt": "Noir finish game room wide view",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-kids-wide",
+    "filename": "Childrens Rooms - Wide.jpg",
+    "title": "Children's Bedrooms — Noir",
+    "category": "interiors",
+    "alt": "Noir finish children's bedrooms wide view",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-firstfloor-1",
+    "filename": "First Floor Bed - Wide.jpg",
+    "title": "Ground Floor Bedroom — Noir",
+    "category": "interiors",
+    "alt": "Noir finish ground floor bedroom suite wide view",
+    "finishContext": "noir"
+  },
+  {
+    "id": "noir-firstfloor-2",
+    "filename": "First Floor Bed Angle 2 - Wide.jpg",
+    "title": "Ground Floor Bedroom, Angle 2 — Noir",
+    "category": "interiors",
+    "alt": "Noir finish ground floor bedroom secondary wide angle",
+    "finishContext": "noir"
+  }
+]

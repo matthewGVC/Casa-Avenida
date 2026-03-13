@@ -1,0 +1,330 @@
+[
+  {
+    "id": "unit-1",
+    "name": "Unit One",
+    "tagline": "Corner residence with south-facing pool garden and rooftop terrace",
+    "gsf": 3100,
+    "underAirSF": 2450,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit One commands a coveted corner position at Casa Avenida, offering exceptional natural light from two exposures and a generous south-facing pool garden. Four levels of refined living culminate in a private rooftop terrace with panoramic views of the Delray Beach skyline.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Summer kitchen on terrace",
+      "Corner exposure — dual aspect light",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/1 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U1 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U1 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  },
+  {
+    "id": "unit-2",
+    "name": "Unit Two",
+    "tagline": "Four levels of light-filled living with private pool and rooftop retreat",
+    "gsf": 3050,
+    "underAirSF": 2400,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Two offers an expertly proportioned floor plan across four distinct levels, with a private pool garden on the ground floor and a rooftop terrace above the city. Clean sightlines and generous ceiling heights define every living space.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Floor-to-ceiling glazing",
+      "Open-concept second level living",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/2 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U2 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U2 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  },
+  {
+    "id": "unit-3",
+    "name": "Unit Three",
+    "tagline": "Refined four-level townhome with pool garden and entertainer's rooftop",
+    "gsf": 3050,
+    "underAirSF": 2400,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Three delivers a seamless indoor-outdoor living experience, with a private pool garden flowing naturally from the ground-level foyer. The third-level primary suite is a sanctuary of calm, while the rooftop terrace offers the ideal stage for entertaining.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/3 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U3 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U3 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  },
+  {
+    "id": "unit-4",
+    "name": "Unit Four",
+    "tagline": "A full-floor primary suite crowns four levels of impeccable design",
+    "gsf": 3075,
+    "underAirSF": 2425,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Four distinguishes itself with a third-level primary suite that spans the full width of the residence, providing an unparalleled sense of privacy and space. A private pool garden and rooftop terrace frame both ends of an exceptional vertical living experience.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Full-width primary suite on level three",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/4 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U4 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U4 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  },
+  {
+    "id": "unit-5",
+    "name": "Unit Five",
+    "tagline": "The most versatile floor plan — two ground-floor configurations available",
+    "gsf": 3125,
+    "underAirSF": 2475,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Five is Casa Avenida's most adaptable residence, offering two distinct ground-floor configurations to suit differing lifestyles. Whether maximizing private outdoor space or adding a flex room, this townhome delivers exceptional customization without compromise.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Two ground-floor layout options",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": "",
+      "groundAlt": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/5 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U5 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U5 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"],
+    "groundFloorAlternates": 2
+  },
+  {
+    "id": "unit-6",
+    "name": "Unit Six",
+    "tagline": "Sophisticated vertical living with an expansive rooftop garden terrace",
+    "gsf": 3050,
+    "underAirSF": 2400,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Six pairs restrained, sophisticated interiors with a rooftop terrace of exceptional scale — an outdoor room above the Delray Beach rooftops. The ground-level pool garden creates a private green sanctuary from the moment you arrive.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/6 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U6 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U6 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  },
+  {
+    "id": "unit-7",
+    "name": "Unit Seven",
+    "tagline": "Four levels of curated design, steps from Atlantic Avenue",
+    "gsf": 3050,
+    "underAirSF": 2400,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Seven offers a masterful balance of privacy and connection — moments from the energy of Atlantic Avenue, yet completely insulated within a private sanctuary of pool, garden, and rooftop sky. Every level reveals a new dimension of considered design.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace",
+      "Private 2-car garage with EV charging",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/7 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U7 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U7 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  },
+  {
+    "id": "unit-8",
+    "name": "Unit Eight",
+    "tagline": "Corner end residence with maximum light, privacy, and rooftop views",
+    "gsf": 3150,
+    "underAirSF": 2500,
+    "exteriorSF": 650,
+    "bedrooms": 4,
+    "bathrooms": 4.5,
+    "levels": 4,
+    "status": "available",
+    "priceDisplay": "INQUIRE FOR PRICING",
+    "description": "Unit Eight is the signature end residence of Casa Avenida — a corner position with dual-aspect light, an oversized pool garden, and the most expansive rooftop terrace in the collection. This is the pinnacle of the Casa Avenida offering.",
+    "features": [
+      "Private in-unit elevator",
+      "Cocktail pool + garden",
+      "Rooftop terrace — largest in collection",
+      "Private 2-car garage with EV charging",
+      "Corner end position — dual-aspect light",
+      "Floor-to-ceiling glazing",
+      "Choice of Brisa or Noir finish package"
+    ],
+    "floorImages": {
+      "ground": "",
+      "second": "",
+      "third": "",
+      "fourth": ""
+    },
+    "floorSummaries": {
+      "ground": "Garage, Foyer, Bedroom, Full Bath",
+      "second": "Living, Dining, Kitchen, Powder Room",
+      "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
+      "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
+    },
+    "allFloorsImage": "/images/floorplans/8 FP Info Tab.webp",
+    "floorplanPdf": "/pdfs/floorplans/U8 Floorplan Handout - Landscape Branded.pdf",
+    "allFloorsPdf": "/pdfs/floorplans/U8 All Floors.pdf",
+    "heroImage": "",
+    "galleryImages": [],
+    "finishPackages": ["brisa", "noir"]
+  }
+]

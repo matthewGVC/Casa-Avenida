@@ -1,0 +1,48 @@
+{
+  "siteName": "Casa Avenida",
+  "address": "102 SE 5th Ave, Delray Beach, FL 33483",
+  "phone": "+15617993000",
+  "email": "casaavenida@elliman.com",
+  "completionDate": "Q2 2027",
+  "priceFrom": "From the low $3M",
+  "agents": [
+    {
+      "id": "tj-verdiglione",
+      "name": "TJ Verdiglione",
+      "title": "Licensed Real Estate Salesperson",
+      "company": "Douglas Elliman",
+      "phone": "+15617993000",
+      "email": "tj.verdiglione@elliman.com",
+      "headshot": "/images/team/tj.jpg",
+      "bio": "TJ Verdiglione is a top-producing luxury real estate specialist with Douglas Elliman, with deep expertise in the South Florida market and a track record of representing the most exclusive pre-construction developments in the region."
+    },
+    {
+      "id": "nicole-melveney",
+      "name": "Nicole Melveney",
+      "title": "Licensed Real Estate Salesperson",
+      "company": "Douglas Elliman",
+      "phone": "+15617993001",
+      "email": "nicole.melveney@elliman.com",
+      "headshot": "/images/team/nicole.jpg",
+      "bio": "Nicole Melveney brings extensive experience in luxury residential real estate to Casa Avenida, offering buyers a seamless and sophisticated acquisition experience from initial inquiry through closing."
+    }
+  ],
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  "disclaimer": "Oral representations cannot be relied upon as correctly stating representations of the developer. For correct representations, make reference to this brochure and to the documents required by Section 718.503, Florida Statutes, to be furnished by a developer to a buyer or lessee. This offering is made only by the prospectus for the condominium and no statement should be relied upon if not made in the prospectus. This is not intended to be an offer to sell, or solicitation of offers to buy, real property in states where prohibited by law. Prices, specifications and availability subject to change without notice. Renderings are artist's conceptual interpretations and are subject to change. Douglas Elliman Real Estate fully supports the principles of the Fair Housing Act and the Equal Opportunity Act.",
+  "constructionTimeline": {
+    "milestones": [
+      { "label": "Site Preparation", "date": "Q1 2025", "completed": true },
+      { "label": "Foundation", "date": "Q2 2025", "completed": true },
+      { "label": "Framing", "date": "Q4 2025", "completed": false },
+      { "label": "Active Construction", "date": "Q1 2026", "completed": false },
+      { "label": "Interior Fit-Out", "date": "Q3 2026", "completed": false },
+      { "label": "Completion", "date": "Q2 2027", "completed": false }
+    ],
+    "currentPhase": "Framing",
+    "completionDate": "Q2 2027"
+  }
+}
