@@ -34,8 +34,36 @@ export default function UnitDetailPage({ params }: Props) {
 
   const finishes = getFinishesPackages();
 
+  const listingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Apartment",
+    name: `Casa Avenida — ${unit.name}`,
+    description: unit.description,
+    url: `https://casaavenidadelray.com/residences/${unit.id}`,
+    numberOfRooms: unit.bedrooms,
+    numberOfBathroomsTotal: unit.bathrooms,
+    floorSize: {
+      "@type": "QuantitativeValue",
+      value: unit.underAirSF,
+      unitCode: "FTK",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "102 SE 5th Ave",
+      addressLocality: "Delray Beach",
+      addressRegion: "FL",
+      postalCode: "33483",
+      addressCountry: "US",
+    },
+  };
+
   return (
     <>
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(listingSchema) }}
+      />
       {/* Breadcrumb + unit header */}
       <header className="bg-lunar pt-28 pb-0 lg:pt-32 px-6 lg:px-12 border-b border-white/10">
         <div className="max-w-[1440px] mx-auto">

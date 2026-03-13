@@ -24,21 +24,58 @@ const afacadFlux = Afacad({
 
 export const metadata: Metadata = {
   title: {
-    default: "Casa Avenida | Luxury Residences in Delray Beach",
+    default: "Casa Avenida | Luxury Residences in Delray Beach, FL",
     template: "%s | Casa Avenida",
   },
   description:
-    "8 boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL. From the low $3M. Expected completion Q2 2027.",
+    "Eight boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL. Prices from the low $3M. Private elevator, cocktail pool, rooftop terrace. Completion Q2 2027.",
   metadataBase: new URL("https://casaavenidadelray.com"),
+  keywords: [
+    "Casa Avenida",
+    "Delray Beach luxury real estate",
+    "Delray Beach townhomes",
+    "luxury condos Delray Beach",
+    "pre-construction Delray Beach",
+    "Atlantic Avenue Delray Beach",
+    "South Florida luxury homes",
+    "Douglas Elliman Delray Beach",
+  ],
+  authors: [{ name: "Casa Avenida" }],
   openGraph: {
     siteName: "Casa Avenida",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
+    url: "https://casaavenidadelray.com",
+    title: "Casa Avenida | Luxury Residences in Delray Beach, FL",
+    description:
+      "Eight boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach. Prices from the low $3M.",
+    images: [
+      {
+        url: "/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Casa Avenida — Luxury Residences in Delray Beach, FL",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Casa Avenida | Luxury Residences in Delray Beach",
+    description: "Eight boutique luxury townhomes at 102 SE 5th Ave, Delray Beach.",
+    images: ["/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://casaavenidadelray.com",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

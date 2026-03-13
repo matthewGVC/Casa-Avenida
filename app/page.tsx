@@ -21,15 +21,44 @@ import InquiryCTA             from "@/components/home/InquiryCTA";
 import FloatingCTA            from "@/components/layout/FloatingCTA";
 
 export const metadata: Metadata = {
-  title: "Casa Avenida | Luxury Residences in Delray Beach",
+  title: "Casa Avenida | Luxury Residences in Delray Beach, FL",
   description:
-    "8 boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL. From the low $3M. Expected completion Q2 2027.",
-  openGraph: {
-    title: "Casa Avenida | Luxury Residences in Delray Beach",
-    description:
-      "8 boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL. From the low $3M.",
-    images: [{ url: "/images/logos/SOCIAL PREVIEW - IMAGE.png", width: 1200, height: 630 }],
+    "Eight boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL. Prices from the low $3M. Private elevator, cocktail pool, rooftop terrace. Completion Q2 2027.",
+  alternates: {
+    canonical: "https://casaavenidadelray.com",
   },
+  openGraph: {
+    title: "Casa Avenida | Luxury Residences in Delray Beach, FL",
+    description:
+      "Eight boutique luxury townhomes at 102 SE 5th Ave, Delray Beach — one block from Atlantic Avenue.",
+    images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
+  },
+};
+
+// Schema.org: LocalBusiness + RealEstateListing
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["RealEstateAgent", "LocalBusiness"],
+  name: "Casa Avenida",
+  description:
+    "Eight boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL.",
+  url: "https://casaavenidadelray.com",
+  telephone: "+15617993000",
+  email: "casaavenida@elliman.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "102 SE 5th Ave",
+    addressLocality: "Delray Beach",
+    addressRegion: "FL",
+    postalCode: "33483",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 26.4616,
+    longitude: -80.0731,
+  },
+  priceRange: "$$$",
 };
 
 export default function HomePage() {
@@ -41,6 +70,11 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <HeroSection images={heroImages} />
       <MarqueeStrip enabled />
       <VisionSection />
