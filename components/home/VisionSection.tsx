@@ -1,7 +1,6 @@
 import Image from "next/image";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import ScrollFade from "@/components/animations/ScrollFade";
-import { BLUR_DATA_URL } from "@/lib/content";
+import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
 
 /**
  * Two-column Vision/Story section.
@@ -9,7 +8,8 @@ import { BLUR_DATA_URL } from "@/lib/content";
  * Right: architectural render.
  */
 export default function VisionSection() {
-  const heroImage = ""; // Placeholder until renders provided
+  // Rendered Shot is the best available hero render until unit-specific assets arrive
+  const heroImage = encodeImagePath("/images/gallery/Rendered Shot.jpg");
 
   return (
     <section className="bg-lunar py-24 lg:py-36 px-6 lg:px-12" aria-labelledby="vision-heading">
@@ -39,19 +39,15 @@ export default function VisionSection() {
         {/* Right — render */}
         <ScrollFade delay={150}>
           <div className="relative aspect-[3/4] w-full overflow-hidden">
-            {heroImage ? (
-              <Image
-                src={heroImage}
-                alt="Casa Avenida architectural render"
-                fill
-                className="object-cover"
-                placeholder="blur"
-                blurDataURL={BLUR_DATA_URL}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            ) : (
-              <ImagePlaceholder className="absolute inset-0" label="Render Coming Soon" />
-            )}
+            <Image
+              src={heroImage}
+              alt="Casa Avenida — architectural render, Delray Beach"
+              fill
+              className="object-cover"
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </ScrollFade>
 

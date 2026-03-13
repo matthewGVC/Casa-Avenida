@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "Eight boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach. Prices from the low $3M.",
     images: [
       {
-        url: "/og-default.jpg",
+        url: "/og-default.png",
         width: 1200,
         height: 630,
         alt: "Casa Avenida — Luxury Residences in Delray Beach, FL",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Casa Avenida | Luxury Residences in Delray Beach",
     description: "Eight boutique luxury townhomes at 102 SE 5th Ave, Delray Beach.",
-    images: ["/og-default.jpg"],
+    images: ["/og-default.png"],
   },
   alternates: {
     canonical: "https://casaavenidadelray.com",

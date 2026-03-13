@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Casa Avenida | Luxury Residences in Delray Beach, FL",
     description:
       "Eight boutique luxury townhomes at 102 SE 5th Ave, Delray Beach — one block from Atlantic Avenue.",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
   },
 };
 
