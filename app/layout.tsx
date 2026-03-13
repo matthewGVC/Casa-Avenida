@@ -90,12 +90,12 @@ export default function RootLayout({
       className={`${raleway.variable} ${afacadFlux.variable}`}
     >
       <head>
-        {/* Preload Quake font if present — gracefully no-ops if file is missing */}
+        {/* Preload Quake OTF — WOFF2 listed as future-proof; OTF is the available file */}
         <link
           rel="preload"
-          href="/fonts/Quake.woff2"
+          href="/fonts/Quake.otf"
           as="font"
-          type="font/woff2"
+          type="font/otf"
           crossOrigin="anonymous"
         />
       </head>

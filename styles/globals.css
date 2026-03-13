@@ -73,12 +73,13 @@ body {
 }
 
 /* ─────────────────────────────────────────────
-   Quake Font Face (local WOFF2)
-   Falls back to Cormorant Garamond if missing
+   Quake Font Face
+   OTF available — WOFF2 listed first as future-proof fallback
 ───────────────────────────────────────────── */
 @font-face {
   font-family: 'Quake';
-  src: url('/fonts/Quake.woff2') format('woff2');
+  src: url('/fonts/Quake.woff2') format('woff2'),
+       url('/fonts/Quake.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

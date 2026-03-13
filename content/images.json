@@ -1,8 +1,12 @@
 {
   "logos": {
     "gold": "/images/logos/casa avenida logos/Casa Avenida - Gold Bronze.svg",
+    "goldPng": "/images/logos/casa avenida logos/Casa Avenida - Gold Bronze.png",
     "white": "/images/logos/casa avenida logos/Casa Avenida - White.svg",
+    "whitePng": "/images/logos/casa avenida logos/Casa Avenida - White.png",
     "dark": "/images/logos/casa avenida logos/Casa Avenida - Slate.svg",
+    "darkPng": "/images/logos/casa avenida logos/Casa Avenida - Slate.png",
+    "goldWhite": "/images/logos/casa avenida logos/Casa Avenida - Gold White.svg",
     "monogram": "/images/logos/casa avenida logos/A Logo.webp",
     "monogramPng": "/images/logos/casa avenida logos/A.png",
     "appIcon": "/images/logos/casa avenida logos/APP ICON - LR.png",
@@ -27,12 +31,12 @@
     "kastelo": "/images/team/Kostelo image.webp"
   },
   "hero": [
-    "/images/hero/hero-01.jpg",
-    "/images/hero/hero-02.jpg",
-    "/images/hero/hero-03.jpg",
-    "/images/hero/hero-04.jpg",
-    "/images/hero/hero-05.jpg",
-    "/images/hero/hero-06.jpg"
+    "/images/gallery/Exterior 1 Expanded.jpg",
+    "/images/gallery/Rendered Shot.jpg",
+    "/images/gallery/Brisa Finishes/Living Angle 1.jpg",
+    "/images/gallery/Brisa Finishes/Pool Angle 1.jpg",
+    "/images/gallery/Noir Finishes/Living Angle 1.jpg",
+    "/images/gallery/Brisa Finishes/Terrace Angle 1 v2.jpg"
   ],
   "floorplanInfoTabs": {
     "unit-1": "/images/floorplans/1 FP Info Tab.webp",

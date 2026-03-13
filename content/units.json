@@ -37,8 +37,12 @@
     "allFloorsImage": "/images/floorplans/1 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U1 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U1 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Brisa Finishes/Living Angle 1.jpg",
+    "galleryImages": [
+      "/images/gallery/Brisa Finishes/Living Angle 2.jpg",
+      "/images/gallery/Brisa Finishes/Kitchen Angle 1.jpg",
+      "/images/gallery/Brisa Finishes/Primary Bed 1.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   },
   {
@@ -78,8 +82,12 @@
     "allFloorsImage": "/images/floorplans/2 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U2 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U2 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Brisa Finishes/Pool Angle 1.jpg",
+    "galleryImages": [
+      "/images/gallery/Brisa Finishes/Dining Angle 1.jpg",
+      "/images/gallery/Brisa Finishes/Kitchen Angle 2.jpg",
+      "/images/gallery/Brisa Finishes/Primary Bath 1.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   },
   {
@@ -118,8 +126,12 @@
     "allFloorsImage": "/images/floorplans/3 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U3 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U3 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Noir Finishes/Terrace Angle 1 v2.jpg",
+    "galleryImages": [
+      "/images/gallery/Noir Finishes/Living Angle 1.jpg",
+      "/images/gallery/Noir Finishes/Kitchen Update Angle 1.jpg",
+      "/images/gallery/Noir Finishes/Primary Bed Angle 1 - Wide.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   },
   {
@@ -159,8 +171,12 @@
     "allFloorsImage": "/images/floorplans/4 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U4 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U4 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Noir Finishes/Primary Bed Angle 1 - Wide.jpg",
+    "galleryImages": [
+      "/images/gallery/Noir Finishes/Primary Bath - Tub Angle 1.jpg",
+      "/images/gallery/Noir Finishes/Living Angle 2.jpg",
+      "/images/gallery/Noir Finishes/Dining Angle 1.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   },
   {
@@ -201,8 +217,12 @@
     "allFloorsImage": "/images/floorplans/5 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U5 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U5 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Brisa Finishes/Kitchen Angle 3.jpg",
+    "galleryImages": [
+      "/images/gallery/Brisa Finishes/Bonus Lounge 1.jpg",
+      "/images/gallery/Brisa Finishes/Game Room 1.jpg",
+      "/images/gallery/Brisa Finishes/Lounge Angle 1.jpg"
+    ],
     "finishPackages": ["brisa", "noir"],
     "groundFloorAlternates": 2
   },
@@ -242,8 +262,12 @@
     "allFloorsImage": "/images/floorplans/6 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U6 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U6 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Brisa Finishes/Terrace Angle 1 v2.jpg",
+    "galleryImages": [
+      "/images/gallery/Brisa Finishes/Lounge Angle 2.jpg",
+      "/images/gallery/Brisa Finishes/Living Angle 3.jpg",
+      "/images/gallery/Brisa Finishes/Dining to Kitchen Straight.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   },
   {
@@ -282,8 +306,12 @@
     "allFloorsImage": "/images/floorplans/7 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U7 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U7 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Noir Finishes/Living Angle 1.jpg",
+    "galleryImages": [
+      "/images/gallery/Noir Finishes/Kitchen Update Angle 2.jpg",
+      "/images/gallery/Noir Finishes/Game Room Angle 1.jpg",
+      "/images/gallery/Noir Finishes/Lounge Angle 1 - Wide.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   },
   {
@@ -323,8 +351,12 @@
     "allFloorsImage": "/images/floorplans/8 FP Info Tab.webp",
     "floorplanPdf": "/pdfs/floorplans/U8 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U8 All Floors.pdf",
-    "heroImage": "",
-    "galleryImages": [],
+    "heroImage": "/images/gallery/Exterior 1 Expanded.jpg",
+    "galleryImages": [
+      "/images/gallery/Noir Finishes/Primary Bed Angle 1 - Portrait.jpg",
+      "/images/gallery/Noir Finishes/Primary Bath - Mirror Angle.jpg",
+      "/images/gallery/Noir Finishes/Lounge Angle 4 - Wide.jpg"
+    ],
     "finishPackages": ["brisa", "noir"]
   }
 ]
