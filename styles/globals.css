@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────
+   Brand Color Tokens
+───────────────────────────────────────────── */
+:root {
+  --color-lunar:   #373A36;
+  --color-saddle:  #4F2C1D;
+  --color-bahama:  #006A8E;
+  --color-sapling: #DFD1A7;
+  --color-white:   #FFFFFF;
+
+  /* Font families (applied via layout.tsx className vars) */
+  --font-display:  var(--font-quake), 'Cormorant Garamond', Georgia, serif;
+  --font-heading:  var(--font-raleway), 'Helvetica Neue', Helvetica, sans-serif;
+  --font-body:     var(--font-afacad), 'Helvetica Neue', Helvetica, sans-serif;
+  --font-ui:       'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ─────────────────────────────────────────────
+   Base Reset
+───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-lunar);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────────
+   Typography Utilities
+───────────────────────────────────────────── */
+
+/* Display — Quake — hero headlines only */
+.font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+/* Heading — Raleway — section headers */
+.font-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+}
+
+/* Body — Afacad Flux */
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* UI — Helvetica Neue — labels, badges */
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* ─────────────────────────────────────────────
+   Quake Font Face (local WOFF2)
+   Falls back to Cormorant Garamond if missing
+───────────────────────────────────────────── */
+@font-face {
+  font-family: 'Quake';
+  src: url('/fonts/Quake.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────────
+   CSS Grain Overlay
+   Applied via a fixed pseudo-element in GrainOverlay component
+   Zero JS cost — pure CSS SVG filter
+───────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ─────────────────────────────────────────────
+   Marquee Animation
+───────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover,
+.marquee-track[data-paused='true'] {
+  animation-play-state: paused;
+}
+
+/* ─────────────────────────────────────────────
+   Ken Burns Hero Animation
+───────────────────────────────────────────── */
+@keyframes kenburns {
+  0%   { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+
+.ken-burns {
+  animation: kenburns 8s ease-in-out forwards;
+}
+
+/* ─────────────────────────────────────────────
+   Button Hover Sweep
+   Gold fill sweeps left → right on ::after pseudo-element
+───────────────────────────────────────────── */
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.btn-sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-sapling);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-sweep:hover::after {
+  transform: translateX(0);
+}
+
+/* ─────────────────────────────────────────────
+   Nav scroll transition
+───────────────────────────────────────────── */
+.nav-transparent {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.nav-solid {
+  background-color: var(--color-lunar);
+  transition: background-color 0.3s ease;
+}
+
+/* ─────────────────────────────────────────────
+   Floor image crossfade
+───────────────────────────────────────────── */
+.floor-image-enter {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.floor-image-enter-active {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────
+   Accessibility — Reduced Motion
+───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none;
+    overflow: auto;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Utilities
+───────────────────────────────────────────── */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-sapling { color: var(--color-sapling); }
+.text-bahama  { color: var(--color-bahama); }
+.text-saddle  { color: var(--color-saddle); }
+.text-lunar   { color: var(--color-lunar); }
+
+.bg-sapling { background-color: var(--color-sapling); }
+.bg-bahama  { background-color: var(--color-bahama); }
+.bg-saddle  { background-color: var(--color-saddle); }
+.bg-lunar   { background-color: var(--color-lunar); }
+
+/* Thin gold rule separator */
+.gold-rule {
+  border: none;
+  border-top: 1px solid var(--color-sapling);
+  opacity: 0.4;
+}
