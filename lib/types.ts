@@ -181,6 +181,11 @@ export interface TeamMember {
 
 export type ArticleTag = "Market Updates" | "Lifestyle" | "Development Progress";
 
+export interface ArticleBlock {
+  type: "heading" | "paragraph";
+  text: string;
+}
+
 export interface Article {
   slug: string;
   title: string;
@@ -188,6 +193,7 @@ export interface Article {
   date: string;             // ISO date string
   coverImage: string;
   tags: ArticleTag[];
+  body?: ArticleBlock[];    // Structured content blocks
 }
 
 // ── Image Manifest ───────────────────────────

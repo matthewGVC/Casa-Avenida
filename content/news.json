@@ -5,7 +5,41 @@
     "excerpt": "A look at the Delray Beach market this summer, the latest on Casa Avenida's progress, and the lifestyle awaiting residents just one block from Atlantic Avenue.",
     "date": "2025-06-15",
     "coverImage": "/images/gallery/Exterior 1.jpg",
-    "tags": ["Market Updates", "Lifestyle", "Development Progress"]
+    "tags": ["Market Updates", "Lifestyle", "Development Progress"],
+    "body": [
+      {
+        "type": "heading",
+        "text": "The Market"
+      },
+      {
+        "type": "paragraph",
+        "text": "South Florida's luxury real estate market continues to demonstrate its remarkable resilience. In Delray Beach specifically, demand for boutique product — eight units or fewer, walkable to Atlantic Avenue — remains far outpacing supply. Casa Avenida was conceived precisely to answer this demand: eight curated townhomes where scarcity, craft, and location converge."
+      },
+      {
+        "type": "paragraph",
+        "text": "Buyers who came to Delray Beach during the 2020–2022 migration wave are now graduating: they know the market, they know what they want, and they are unwilling to compromise on quality or address. Casa Avenida offers both."
+      },
+      {
+        "type": "heading",
+        "text": "On Site"
+      },
+      {
+        "type": "paragraph",
+        "text": "Site preparation is complete. Foundation work is now underway. The 8-residence footprint at 102 SE 5th Ave is taking shape, and the team from RWB-Linares Architecture is on site weekly to ensure that every measurement reflects the precision of the design intent."
+      },
+      {
+        "type": "paragraph",
+        "text": "Framing is anticipated to begin in Q4 2025, with interior fit-out — where the Brisa and Noir finish selections come to life — targeted for Q3 2026. Completion remains on schedule for Q2 2027."
+      },
+      {
+        "type": "heading",
+        "text": "The Lifestyle"
+      },
+      {
+        "type": "paragraph",
+        "text": "One block from Atlantic Avenue, Casa Avenida residents will step into one of South Florida's most celebrated walkable neighborhoods. Award-winning restaurants, boutique fitness studios, art galleries, and Delray's famous Blue Wave beach are all within five minutes on foot. It is, in the truest sense, a life without a car — for those who choose it."
+      }
+    ]
   },
   {
     "slug": "haven-october-2025",
@@ -13,7 +47,33 @@
     "excerpt": "As South Florida's peak season approaches, we explore what makes Delray Beach the most sought-after address in Palm Beach County, and share updates from the Casa Avenida site.",
     "date": "2025-10-01",
     "coverImage": "/images/gallery/Exterior 2.jpg",
-    "tags": ["Market Updates", "Development Progress"]
+    "tags": ["Market Updates", "Development Progress"],
+    "body": [
+      {
+        "type": "heading",
+        "text": "Peak Season Arrives"
+      },
+      {
+        "type": "paragraph",
+        "text": "October marks the start of South Florida's real estate season in earnest. Buyers who spent the summer elsewhere return with renewed clarity about what they want — and increasingly, what they want is Delray Beach. The city has quietly become the most in-demand address in Palm Beach County, prized for its walkability, cultural calendar, and the quality of its dining and beach scene."
+      },
+      {
+        "type": "paragraph",
+        "text": "For boutique luxury product like Casa Avenida, this moment is ideal. We are entering the season with the project well advanced, finish selections resolved, and a clear construction timeline. Buyers at this stage are purchasing with confidence."
+      },
+      {
+        "type": "heading",
+        "text": "Site Update: Framing Begins"
+      },
+      {
+        "type": "paragraph",
+        "text": "Framing is now underway at 102 SE 5th Ave. The four-level structure is rising, and the vertical scale of the residences — generous floor-to-ceiling heights at every level — is already apparent. It is gratifying to see the architectural ambition of RWB-Linares taking physical form."
+      },
+      {
+        "type": "paragraph",
+        "text": "The private elevator shafts, the rooftop terrace structures, and the ground-level pool garden footprints are all clearly legible in the framing. The project is on schedule for a Q2 2027 completion."
+      }
+    ]
   },
   {
     "slug": "haven-november-2025",
@@ -21,7 +81,33 @@
     "excerpt": "This month we take a closer look at the two finish collections — Brisa and Noir — and explore the design philosophies that shaped them.",
     "date": "2025-11-01",
     "coverImage": "/images/gallery/Living Angle 1.jpg",
-    "tags": ["Lifestyle"]
+    "tags": ["Lifestyle"],
+    "body": [
+      {
+        "type": "heading",
+        "text": "Two Visions, One Standard"
+      },
+      {
+        "type": "paragraph",
+        "text": "Casa Avenida offers two distinct finish packages — Brisa and Noir — because we believe that luxury should reflect the individual, not a single predetermined aesthetic. Both packages were developed by interior designer Stef Leonel and curated by Ava Gray, and both meet the same uncompromising standard of quality. The difference is philosophical."
+      },
+      {
+        "type": "heading",
+        "text": "Brisa: The Coastal Collection"
+      },
+      {
+        "type": "paragraph",
+        "text": "Brisa takes its cues from the South Florida landscape — from sea breeze and warm afternoon light, from the natural palette of sand, stone, and bleached oak. Natural oak wide-plank flooring runs throughout the living areas. Cabinetry is flat-panel in natural oak veneer with integrated pulls. Countertops are Calacatta cream marble with warm gold veining. The effect is luminous by day and intimate by evening — a home that breathes."
+      },
+      {
+        "type": "heading",
+        "text": "Noir: The Dark Dramatic Collection"
+      },
+      {
+        "type": "paragraph",
+        "text": "Noir is an exercise in considered restraint — the luxury of darkness, of depth, of rooms that demand your presence. Charcoal stained hardwood floors. Flat-panel cabinetry in deep espresso lacquer. Nero Marquina marble with white veining. Matte black fixtures. Where Brisa opens, Noir envelops. Both are extraordinary. The choice is entirely yours."
+      }
+    ]
   },
   {
     "slug": "haven-january-2026",
@@ -29,6 +115,32 @@
     "excerpt": "The new year brings fresh energy to the Casa Avenida site. We share construction milestones, market insights, and a preview of what life at 102 SE 5th Ave will feel like.",
     "date": "2026-01-10",
     "coverImage": "/images/gallery/Living Angle 2.jpg",
-    "tags": ["Development Progress", "Market Updates"]
+    "tags": ["Development Progress", "Market Updates"],
+    "body": [
+      {
+        "type": "heading",
+        "text": "A New Year at 102 SE 5th Ave"
+      },
+      {
+        "type": "paragraph",
+        "text": "Construction continues at pace. The framing is complete on all eight residences, and attention has turned to the building envelope — windows, glazing, and the rooftop terrace structures that will define the skyline presence of Casa Avenida from Atlantic Avenue."
+      },
+      {
+        "type": "paragraph",
+        "text": "The private elevator shafts are enclosed, the pool garden excavations are finished, and the mechanical, electrical, and plumbing rough-in is now underway. Interior fit-out — the moment when Brisa and Noir come to life — is targeted for Q3 2026."
+      },
+      {
+        "type": "heading",
+        "text": "The Market in 2026"
+      },
+      {
+        "type": "paragraph",
+        "text": "Delray Beach enters the new year with its strongest fundamentals in recent memory. Inventory in the boutique luxury segment remains critically low. Demand from Northeast and Midwest buyers — professionals, families, and retirees alike — shows no sign of abating. For buyers considering Casa Avenida, the window to secure a preferred residence at pre-completion pricing is narrowing."
+      },
+      {
+        "type": "paragraph",
+        "text": "We encourage serious buyers to contact our sales team at Douglas Elliman to schedule a private briefing and review available residences. TJ Verdiglione and Nicole Melveney are available by appointment."
+      }
+    ]
   }
 ]
