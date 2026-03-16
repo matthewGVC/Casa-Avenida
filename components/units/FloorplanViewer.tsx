@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import type { Unit } from "@/lib/types";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
@@ -94,18 +95,50 @@ export default function FloorplanViewer({ unit }: FloorplanViewerProps) {
       {/* Floorplan image (combined all-floors view) */}
       <div className="relative w-full bg-white/5 border border-white/10 overflow-hidden">
         {hasImage ? (
-          <div className="relative w-full" style={{ paddingBottom: "75%" }}>
-            <Image
-              src={encodeImagePath(unit.allFloorsImage)}
-              alt={`${unit.name} — All Floors Floorplan`}
-              fill
-              className="object-contain p-4"
-              placeholder="blur"
-              blurDataURL={BLUR_DATA_URL}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
-              priority
-            />
-          </div>
+          <TransformWrapper
+            initialScale={1}
+            minScale={0.8}
+            maxScale={4}
+            centerOnInit
+            wheel={{ step: 0.1 }}
+            pinch={{ step: 5 }}
+          >
+            {({ resetTransform }) => (
+              <div className="relative w-full overflow-hidden" style={{ paddingBottom: "75%" }}>
+                {/* Zoom hint */}
+                <span className="absolute top-3 left-3 z-10 font-body text-[10px] text-white/30 pointer-events-none select-none">
+                  Scroll or pinch to zoom
+                </span>
+
+                <TransformComponent
+                  wrapperStyle={{ width: "100%", display: "block", position: "absolute", inset: 0 }}
+                  contentStyle={{ width: "100%", height: "100%" }}
+                >
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={encodeImagePath(unit.allFloorsImage)}
+                      alt={`${unit.name} — All Floors Floorplan`}
+                      fill
+                      className="object-contain p-4"
+                      placeholder="blur"
+                      blurDataURL={BLUR_DATA_URL}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
+                      priority
+                    />
+                  </div>
+                </TransformComponent>
+
+                {/* Reset zoom button */}
+                <button
+                  onClick={() => resetTransform()}
+                  aria-label="Reset zoom"
+                  className="absolute bottom-3 right-3 z-10 font-heading text-[9px] tracking-heading text-white/40 border border-white/15 hover:border-white/30 hover:text-white/60 px-3 py-1.5 transition-colors duration-200 bg-lunar/80 backdrop-blur-sm"
+                >
+                  RESET
+                </button>
+              </div>
+            )}
+          </TransformWrapper>
         ) : (
           <div className="aspect-[4/3]">
             <ImagePlaceholder label="Floorplan Coming Soon" className="h-full" />
