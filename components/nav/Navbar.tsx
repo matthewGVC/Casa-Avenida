@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import MobileNav from "./MobileNav";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/residences", label: "Residences" },
+  { href: "/floorplans", label: "Floorplans" },
   { href: "/gallery", label: "Gallery" },
   { href: "/virtual-tour", label: "Virtual Tour" },
   { href: "/neighborhood", label: "Neighborhood" },
@@ -56,12 +58,14 @@ export default function Navbar() {
             className="flex-shrink-0"
             aria-label="Casa Avenida — return to home"
           >
-            <span
-              className="font-display text-sapling text-xl tracking-wider"
-              aria-hidden="true"
-            >
-              CASA AVENIDA
-            </span>
+            <Image
+              src="/images/logos/casa%20avenida%20logos/Casa%20Avenida%20-%20Gold%20Bronze.svg"
+              alt="Casa Avenida"
+              width={160}
+              height={32}
+              priority
+              className="h-7 w-auto"
+            />
           </Link>
 
           {/* Desktop links */}
