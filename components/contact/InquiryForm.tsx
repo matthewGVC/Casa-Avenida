@@ -35,6 +35,7 @@ export default function InquiryForm({ units, defaultUnit = "" }: InquiryFormProp
 
     // Honeypot check client-side
     if (data._hp) {
+      sessionStorage.setItem("form_submitted", "1");
       router.push("/thank-you");
       return;
     }
@@ -47,6 +48,7 @@ export default function InquiryForm({ units, defaultUnit = "" }: InquiryFormProp
       });
 
       if (res.ok) {
+        sessionStorage.setItem("form_submitted", "1");
         router.push("/thank-you");
       } else {
         setStatus("error");

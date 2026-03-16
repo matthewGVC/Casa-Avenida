@@ -92,6 +92,40 @@ export default function FloorplanViewer({ unit }: FloorplanViewerProps) {
         </p>
       )}
 
+      {/* PDF download links */}
+      <div className="flex flex-wrap gap-3 pt-2">
+        {unit.floorplanPdf && (
+          <a
+            href={unit.floorplanPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-heading text-[10px] tracking-heading text-sapling border border-sapling/40 hover:border-sapling px-5 py-2.5 transition-colors duration-200"
+          >
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
+              <path
+                d="M1 1H8L11 4V13H1V1Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinejoin="round"
+              />
+              <path d="M8 1V4H11" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+              <path d="M3.5 7.5H8.5M6 5.5V9.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+            </svg>
+            DOWNLOAD FLOORPLAN
+          </a>
+        )}
+        {unit.allFloorsPdf && (
+          <a
+            href={unit.allFloorsPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-heading text-[10px] tracking-heading text-white/50 border border-white/20 hover:border-white/40 hover:text-white/70 px-5 py-2.5 transition-colors duration-200"
+          >
+            ALL FLOORS PDF
+          </a>
+        )}
+      </div>
+
       {/* Floorplan image (combined all-floors view) */}
       <div className="relative w-full bg-white/5 border border-white/10 overflow-hidden">
         {hasImage ? (
@@ -146,39 +180,6 @@ export default function FloorplanViewer({ unit }: FloorplanViewerProps) {
         )}
       </div>
 
-      {/* PDF download links */}
-      <div className="flex flex-wrap gap-3 pt-2">
-        {unit.floorplanPdf && (
-          <a
-            href={unit.floorplanPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-heading text-[10px] tracking-heading text-sapling border border-sapling/40 hover:border-sapling px-5 py-2.5 transition-colors duration-200"
-          >
-            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true">
-              <path
-                d="M1 1H8L11 4V13H1V1Z"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinejoin="round"
-              />
-              <path d="M8 1V4H11" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
-              <path d="M3.5 7.5H8.5M6 5.5V9.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-            </svg>
-            DOWNLOAD FLOORPLAN
-          </a>
-        )}
-        {unit.allFloorsPdf && (
-          <a
-            href={unit.allFloorsPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-heading text-[10px] tracking-heading text-white/50 border border-white/20 hover:border-white/40 hover:text-white/70 px-5 py-2.5 transition-colors duration-200"
-          >
-            ALL FLOORS PDF
-          </a>
-        )}
-      </div>
     </div>
   );
 }

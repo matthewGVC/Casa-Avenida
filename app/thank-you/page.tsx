@@ -1,27 +1,37 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getAgents } from "@/lib/content";
 import AgentCard from "@/components/contact/AgentCard";
 import ScrollFade from "@/components/animations/ScrollFade";
 
-export const metadata: Metadata = {
-  title: "Thank You | Casa Avenida",
-  description: "Your inquiry has been received. Our team will be in touch shortly.",
-  robots: { index: false, follow: false },
-};
+const agents = getAgents();
 
 export default function ThankYouPage() {
-  const agents = getAgents();
+  const router = useRouter();
+  const [allowed, setAllowed] = useState(false);
+
+  useEffect(() => {
+    const flag = sessionStorage.getItem("form_submitted");
+    if (!flag) {
+      router.replace("/not-found");
+    } else {
+      sessionStorage.removeItem("form_submitted");
+      setAllowed(true);
+    }
+  }, [router]);
+
+  if (!allowed) return null;
 
   return (
     <section className="bg-lunar min-h-screen flex flex-col items-center justify-center px-6 py-32 text-center">
       <div className="max-w-2xl mx-auto">
         <ScrollFade>
-          {/* Monogram */}
           <div className="w-16 h-16 rounded-full border border-sapling/30 flex items-center justify-center mx-auto mb-8">
             <span className="font-display text-sapling text-2xl">A</span>
           </div>
-
           <p className="font-heading text-sapling/60 text-xs tracking-heading mb-4">
             INQUIRY RECEIVED
           </p>
@@ -34,14 +44,12 @@ export default function ThankYouPage() {
           </p>
         </ScrollFade>
 
-        {/* Agent cards */}
         <ScrollFade delay={100} className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 text-left">
           {agents.map((agent) => (
             <AgentCard key={agent.id} agent={agent} />
           ))}
         </ScrollFade>
 
-        {/* CTAs */}
         <ScrollFade delay={160} className="flex flex-wrap gap-4 justify-center">
           <Link
             href="/gallery"

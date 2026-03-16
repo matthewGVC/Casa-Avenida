@@ -18,7 +18,9 @@ export default function NotFound() {
         </div>
 
         <div>
-          <p className="font-heading text-white/20 text-[10px] tracking-heading mb-3">404</p>
+          <p className="font-display text-sapling text-[clamp(4rem,15vw,10rem)] leading-none mb-4 tracking-wider">
+            404
+          </p>
           <h1 className="font-display text-white text-4xl lg:text-5xl leading-tight mb-4">
             PAGE NOT FOUND
           </h1>
