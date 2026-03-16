@@ -41,10 +41,24 @@ export default function InquiryForm({ units, defaultUnit = "" }: InquiryFormProp
     }
 
     try {
+      // Collect reCAPTCHA token if available
+      let recaptchaToken = "";
+      if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+        try {
+          recaptchaToken = await (window as Window & { grecaptcha?: { execute: (key: string, opts: { action: string }) => Promise<string> } }).grecaptcha?.execute(
+            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+            { action: "contact_submit" }
+          ) ?? "";
+        } catch {
+          // If reCAPTCHA fails, proceed anyway (graceful degradation)
+          recaptchaToken = "";
+        }
+      }
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       });
 
       if (res.ok) {

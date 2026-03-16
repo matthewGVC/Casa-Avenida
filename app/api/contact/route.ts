@@ -19,6 +19,37 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true }, { status: 200 });
     }
 
+    // reCAPTCHA v3 verification
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+    if (recaptchaSecret) {
+      const token = body.recaptchaToken as string | undefined;
+      if (!token) {
+        return NextResponse.json(
+          { error: "Missing reCAPTCHA token" },
+          { status: 400, headers: CORS_HEADERS }
+        );
+      }
+
+      const verifyRes = await fetch(
+        "https://www.google.com/recaptcha/api/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `secret=${recaptchaSecret}&response=${token}`,
+        }
+      );
+      const verifyData = (await verifyRes.json()) as {
+        success: boolean;
+        score: number;
+        action: string;
+      };
+
+      // Score below threshold: silently succeed (don't tip off bots)
+      if (!verifyData.success || verifyData.score < 0.5) {
+        return NextResponse.json({ ok: true }, { status: 200, headers: CORS_HEADERS });
+      }
+    }
+
     // Validate required fields
     const { firstName, lastName, email } = body;
     if (!firstName || !lastName || !email) {
