@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import type { Unit, UnitStatus } from "@/lib/types";
 import Badge from "@/components/ui/Badge";
@@ -57,7 +57,12 @@ const FLOOR_LABELS: Record<string, string> = {
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function FloorplansViewer({ units }: FloorplansViewerProps) {
+  const prefersReducedMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(units[0]?.id ?? "unit-1");
+
+  if (!units.length) return null;
+
+  const transition = { duration: prefersReducedMotion ? 0 : 0.3, ease: "easeOut" as const };
 
   const unit = units.find((u) => u.id === activeId) ?? units[0];
 
@@ -75,7 +80,7 @@ export default function FloorplansViewer({ units }: FloorplansViewerProps) {
       <div
         className="flex flex-wrap gap-2"
         role="tablist"
-        aria-label="Select unit"
+        aria-label="Select residence"
       >
         {units.map((u) => {
           const isActive = u.id === activeId;
@@ -83,6 +88,8 @@ export default function FloorplansViewer({ units }: FloorplansViewerProps) {
             <button
               key={u.id}
               role="tab"
+              id={`tab-${u.id}`}
+              aria-controls={`floorplan-panel-${u.id}`}
               aria-selected={isActive}
               onClick={() => setActiveId(u.id)}
               className={[
@@ -112,7 +119,10 @@ export default function FloorplansViewer({ units }: FloorplansViewerProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={transition}
+            role="tabpanel"
+            id={`floorplan-panel-${unit.id}`}
+            aria-labelledby={`tab-${unit.id}`}
             className="relative w-full bg-[#373A36] border border-white/10 overflow-hidden"
           >
             {hasImage ? (
@@ -125,10 +135,7 @@ export default function FloorplansViewer({ units }: FloorplansViewerProps) {
                 pinch={{ step: 5 }}
               >
                 {({ resetTransform }) => (
-                  <div
-                    className="relative w-full overflow-hidden"
-                    style={{ paddingBottom: "75%" }}
-                  >
+                  <div className="relative w-full overflow-hidden border border-white/10 bg-[#373A36] pb-[75%]">
                     {/* Zoom hint */}
                     <span className="absolute top-3 left-3 z-10 font-body text-[10px] text-white/30 pointer-events-none select-none">
                       Scroll or pinch to zoom
@@ -184,7 +191,7 @@ export default function FloorplansViewer({ units }: FloorplansViewerProps) {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={transition}
             className="flex flex-col gap-6"
           >
             {/* Unit name + badge */}
