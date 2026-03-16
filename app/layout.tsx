@@ -80,6 +80,30 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Casa Avenida",
+  url: "https://casaavenidadelray.com",
+  logo: "https://casaavenidadelray.com/images/logos/casa%20avenida%20logos/Casa%20Avenida%20-%20Gold%20Bronze.svg",
+  description:
+    "Eight boutique luxury townhome residences at 102 SE 5th Ave, Delray Beach, FL. Developed by Kastelo & 4TRO. Sales through Douglas Elliman.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "102 SE 5th Ave",
+    addressLocality: "Delray Beach",
+    addressRegion: "FL",
+    postalCode: "33483",
+    addressCountry: "US",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+15617993000",
+    contactType: "sales",
+    email: "casaavenida@elliman.com",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -91,6 +115,11 @@ export default function RootLayout({
       className={`${raleway.variable} ${afacadFlux.variable}`}
     >
       <head>
+        {/* Schema.org: Organization — global */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {/* Preload Quake OTF — WOFF2 listed as future-proof; OTF is the available file */}
         <link
           rel="preload"

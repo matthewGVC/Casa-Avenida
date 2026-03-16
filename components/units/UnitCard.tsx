@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Unit } from "@/lib/types";
 import Badge from "@/components/ui/Badge";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import { BLUR_DATA_URL, formatSF, encodeImagePath } from "@/lib/content";
+import { formatSF, encodeImagePath } from "@/lib/content";
 
 interface UnitCardProps {
   unit: Unit;
@@ -21,23 +21,22 @@ export default function UnitCard({ unit }: UnitCardProps) {
       aria-label={`View ${unit.name} — ${unit.tagline}`}
     >
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#373A36]">
         {hasHero ? (
           <Image
             src={encodeImagePath(unit.heroImage)}
             alt={`${unit.name} — ${unit.tagline}`}
             fill
             className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-            placeholder="blur"
-            blurDataURL={BLUR_DATA_URL}
+            placeholder="empty"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         ) : (
           <ImagePlaceholder label={unit.name} className="absolute inset-0" />
         )}
 
-        {/* Status badge */}
-        <div className="absolute top-3 left-3">
+        {/* Status badge — bottom left */}
+        <div className="absolute bottom-3 left-3">
           <Badge variant={unit.status} />
         </div>
       </div>

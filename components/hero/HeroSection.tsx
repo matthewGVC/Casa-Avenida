@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 import HeroCarousel from "./HeroCarousel";
 import MagneticButton from "@/components/animations/MagneticButton";
 
@@ -38,9 +39,9 @@ export default function HeroSection({ images }: HeroSectionProps) {
       {/* Image carousel */}
       <HeroCarousel images={images} />
 
-      {/* Dark gradient overlay — bottom fade for legibility */}
+      {/* Dual gradient overlay — strong top for nav legibility, bottom for content */}
       <div
-        className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 via-transparent to-black/60"
+        className="absolute inset-0 z-10 bg-gradient-to-b from-black/55 via-transparent to-black/65"
         aria-hidden="true"
       />
 
@@ -50,20 +51,27 @@ export default function HeroSection({ images }: HeroSectionProps) {
         className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center"
       >
         {/* Tagline above logo */}
-        <p className="font-heading text-white/50 text-xs tracking-[0.3em] mb-6 select-none">
+        <p className="font-heading text-white/50 text-xs tracking-[0.3em] mb-8 select-none">
           DELRAY BEACH · 2027
         </p>
 
-        {/* Main headline */}
-        <h1 className="font-display text-sapling text-[clamp(3rem,10vw,9rem)] leading-none mb-8 select-none">
-          CASA AVENIDA
+        {/* Logo — white SVG */}
+        <h1 className="mb-10 select-none">
+          <Image
+            src="/images/logos/casa%20avenida%20logos/Casa%20Avenida%20-%20White.svg"
+            alt="Casa Avenida"
+            width={480}
+            height={120}
+            priority
+            className="w-[min(480px,80vw)] h-auto"
+          />
         </h1>
 
         {/* CTA */}
         <MagneticButton strength={4} radius={40}>
           <Link
             href="/residences"
-            className="btn-sweep font-heading text-xs tracking-nav px-8 py-4 border border-sapling text-sapling hover:text-lunar transition-colors duration-300"
+            className="btn-sweep overflow-hidden font-heading text-xs tracking-nav px-8 py-4 border border-sapling text-sapling hover:text-lunar transition-colors duration-300"
           >
             EXPLORE RESIDENCES
           </Link>

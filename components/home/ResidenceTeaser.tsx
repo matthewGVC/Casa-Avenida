@@ -6,7 +6,7 @@ import Image from "next/image";
 import type { Unit } from "@/lib/types";
 import Badge from "@/components/ui/Badge";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
+import { encodeImagePath } from "@/lib/content";
 
 interface ResidenceTeaserProps {
   units: Unit[];
@@ -110,8 +110,7 @@ function UnitCard({ unit }: { unit: Unit }) {
           alt={unit.name}
           fill
           className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-          placeholder="blur"
-          blurDataURL={BLUR_DATA_URL}
+          placeholder="empty"
           sizes="360px"
           draggable={false}
         />
@@ -122,11 +121,6 @@ function UnitCard({ unit }: { unit: Unit }) {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-lunar/90 via-lunar/20 to-transparent" />
 
-      {/* Status badge — top right */}
-      <div className="absolute top-4 right-4 z-10">
-        <Badge variant={unit.status} />
-      </div>
-
       {/* Unit number — top left */}
       <div className="absolute top-4 left-5 z-10">
         <span className="font-display text-sapling text-3xl leading-none">
@@ -134,21 +128,14 @@ function UnitCard({ unit }: { unit: Unit }) {
         </span>
       </div>
 
-      {/* Info — bottom, fades up on hover */}
+      {/* Info — bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
-        <p className="font-heading text-white text-sm tracking-heading mb-1">
-          {unit.name.toUpperCase()}
-        </p>
-        <div
-          className="overflow-hidden transition-all duration-500"
-          style={{ maxHeight: "0px" }}
-          ref={(el) => {
-            if (!el) return;
-            // CSS hover via parent group class — handled via Tailwind group-hover
-          }}
-        >
+        <div className="flex items-end justify-between gap-2 mb-1">
+          <p className="font-heading text-white text-sm tracking-heading">
+            {unit.name.toUpperCase()}
+          </p>
+          <Badge variant={unit.status} />
         </div>
-        {/* Always visible */}
         <p className="font-ui text-white/50 text-xs mt-1">
           {unit.gsf.toLocaleString()} SF · {unit.bedrooms} BR
         </p>

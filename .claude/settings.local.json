@@ -20,7 +20,11 @@
       "Bash(do touch:*)",
       "Bash(done)",
       "Bash(npm run:*)",
-      "Bash(grep -n \"from ''''@/lib/content''''\\\\|encodeImagePath\" \"app/news/[slug]/page.tsx\")"
+      "Bash(grep -n \"from ''''@/lib/content''''\\\\|encodeImagePath\" \"app/news/[slug]/page.tsx\")",
+      "Bash(xargs grep:*)",
+      "Bash(grep -E \"^\\\\-.*\\\\.tsx$\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"console.log\\(''data:image/svg+xml;base64,'' + Buffer.from\\(''<svg xmlns=\"\"http://www.w3.org/2000/svg\"\" width=\"\"1\"\" height=\"\"1\"\"><rect width=\"\"1\"\" height=\"\"1\"\" fill=\"\"#373A36\"\"/></svg>''\\).toString\\(''base64''\\)\\)\")"
     ]
   }
 }

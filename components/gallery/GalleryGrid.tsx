@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import type { GalleryImage, GalleryCategory } from "@/lib/types";
-import { getGalleryImageSrc, BLUR_DATA_URL } from "@/lib/content";
+import { getGalleryImageSrc } from "@/lib/content";
 import Lightbox from "@/components/gallery/Lightbox";
 import ScrollFade from "@/components/animations/ScrollFade";
 
@@ -161,14 +161,13 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
                 onClick={() => setLightboxIndex(i)}
                 aria-label={`Open ${img.title} in lightbox`}
               >
-                <div className="relative w-full aspect-[4/3]">
+                <div className="relative w-full aspect-[4/3] bg-[#373A36]">
                   <Image
                     src={getGalleryImageSrc(img)}
                     alt={img.alt}
                     fill
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URL}
+                    placeholder="empty"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     loading="lazy"
                   />
