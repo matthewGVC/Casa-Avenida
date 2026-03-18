@@ -1,8 +1,8 @@
 "use client";
 
 import "leaflet/dist/leaflet.css";
-import { useEffect, useRef, useMemo } from "react";
-import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
+import { useEffect, useRef, useMemo, useCallback } from "react";
+import { MapContainer, TileLayer, Marker, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { POI } from "@/lib/types";
 
@@ -55,7 +55,6 @@ function MapPanner({ selectedPoi }: { selectedPoi: POI | null }) {
   const prevId = useRef<string | null>(null);
 
   useEffect(() => {
-    // Fix 4: Guard against calling panTo before Leaflet map is fully initialised
     if (!selectedPoi || selectedPoi.id === prevId.current) return;
     if (!map.getContainer()) return;
     prevId.current = selectedPoi.id;
@@ -63,6 +62,51 @@ function MapPanner({ selectedPoi }: { selectedPoi: POI | null }) {
   }, [selectedPoi, map]);
 
   return null;
+}
+
+// ── Branded zoom + reset controls ────────────────────────────────────────────
+
+function MapControls() {
+  const map = useMap();
+
+  const handleZoomIn = useCallback(() => map.zoomIn(), [map]);
+  const handleZoomOut = useCallback(() => map.zoomOut(), [map]);
+  const handleReset = useCallback(
+    () => map.setView(CASA_AVENIDA, 15, { animate: true }),
+    [map]
+  );
+
+  return (
+    <div className="ca-map-controls">
+      <button
+        onClick={handleZoomIn}
+        className="ca-map-btn"
+        aria-label="Zoom in"
+        title="Zoom in"
+      >
+        +
+      </button>
+      <button
+        onClick={handleZoomOut}
+        className="ca-map-btn"
+        aria-label="Zoom out"
+        title="Zoom out"
+      >
+        −
+      </button>
+      {/* Divider */}
+      <div className="ca-map-btn-divider" />
+      {/* Reset to home */}
+      <button
+        onClick={handleReset}
+        className="ca-map-btn ca-map-btn--home"
+        aria-label="Reset map to Casa Avenida"
+        title="Reset view"
+      >
+        A
+      </button>
+    </div>
+  );
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
@@ -96,10 +140,19 @@ export default function LeafletMap({ filtered, selectedPoi, onSelectPoi }: Leafl
         subdomains="abcd"
       />
 
-      {/* Casa Avenida home pin — Fix 1a: uses module-level HOME_ICON constant */}
-      <Marker position={CASA_AVENIDA} icon={HOME_ICON} />
+      {/* Casa Avenida home pin with permanent branded label */}
+      <Marker position={CASA_AVENIDA} icon={HOME_ICON}>
+        <Tooltip
+          permanent
+          direction="top"
+          offset={[0, -52]}
+          className="ca-home-label"
+        >
+          CASA AVENIDA
+        </Tooltip>
+      </Marker>
 
-      {/* POI pins — Fix 1b: icons sourced from stable useMemo map */}
+      {/* POI pins */}
       {filtered.map((poi) => (
         <Marker
           key={poi.id}
@@ -112,6 +165,7 @@ export default function LeafletMap({ filtered, selectedPoi, onSelectPoi }: Leafl
       ))}
 
       <MapPanner selectedPoi={selectedPoi} />
+      <MapControls />
     </MapContainer>
   );
 }
