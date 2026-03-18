@@ -14,7 +14,8 @@ export default function FloatingCTA({ units }: FloatingCTAProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      const scrollable = Math.max(1, document.body.scrollHeight - window.innerHeight);
+      const pct = window.scrollY / scrollable;
       // Show after 30% scroll, hide after 90%
       setVisible(pct > 0.3 && pct < 0.9);
     };

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import InquiryForm from "./InquiryForm";
 import type { Unit } from "@/lib/types";
 
@@ -13,6 +13,72 @@ interface InquiryModalProps {
 }
 
 export default function InquiryModal({ isOpen, onClose, units, defaultUnit }: InquiryModalProps) {
+  const prefersReducedMotion = useReducedMotion();
+
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<Element | null>(null);
+  const savedScrollY = useRef(0);
+
+  // Return focus to triggering element on close; focus close button on open
+  useEffect(() => {
+    if (isOpen) {
+      triggerRef.current = document.activeElement;
+      const id = setTimeout(() => closeButtonRef.current?.focus(), 0);
+      return () => clearTimeout(id);
+    } else {
+      if (triggerRef.current instanceof HTMLElement) {
+        triggerRef.current.focus();
+      }
+    }
+  }, [isOpen]);
+
+  // Focus trap: keep Tab/Shift+Tab within panel
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusable = Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  // iOS-safe body scroll lock
+  useEffect(() => {
+    if (isOpen) {
+      savedScrollY.current = window.scrollY;
+      document.body.style.cssText = `position: fixed; top: -${savedScrollY.current}px; left: 0; right: 0; overflow-y: scroll;`;
+    } else {
+      document.body.style.cssText = "";
+      window.scrollTo(0, savedScrollY.current);
+    }
+    return () => {
+      document.body.style.cssText = "";
+      window.scrollTo(0, savedScrollY.current);
+    };
+  }, [isOpen]);
+
   // Close on Escape
   useEffect(() => {
     if (!isOpen) return;
@@ -20,12 +86,6 @@ export default function InquiryModal({ isOpen, onClose, units, defaultUnit }: In
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [isOpen, onClose]);
-
-  // Lock body scroll while open
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -36,7 +96,7 @@ export default function InquiryModal({ isOpen, onClose, units, defaultUnit }: In
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
             className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
@@ -44,22 +104,24 @@ export default function InquiryModal({ isOpen, onClose, units, defaultUnit }: In
 
           {/* Panel */}
           <motion.div
+            ref={panelRef}
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 32 }}
-            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.35, ease: [0.4, 0, 0.2, 1] }}
             role="dialog"
             aria-modal="true"
-            aria-label="Inquire about a residence"
+            aria-labelledby="inquiry-modal-title"
             className="fixed inset-x-4 bottom-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-[61] w-auto md:w-full md:max-w-xl bg-lunar border border-sapling/20 shadow-2xl overflow-y-auto max-h-[90vh]"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-8 pt-8 pb-6 border-b border-white/10">
               <div>
                 <p className="font-heading text-sapling text-[10px] tracking-[0.2em] mb-1">CASA AVENIDA</p>
-                <h2 className="font-heading text-white text-sm tracking-heading">INQUIRE ABOUT A RESIDENCE</h2>
+                <h2 id="inquiry-modal-title" className="font-heading text-white text-sm tracking-heading">INQUIRE ABOUT A RESIDENCE</h2>
               </div>
               <button
+                ref={closeButtonRef}
                 onClick={onClose}
                 aria-label="Close inquiry form"
                 className="w-8 h-8 flex items-center justify-center text-white/40 hover:text-sapling transition-colors duration-200"
