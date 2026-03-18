@@ -89,7 +89,7 @@ export default function HomePage() {
       <InquiryCTA />
 
       {/* Home-page-only floating CTA — client component */}
-      <FloatingCTA />
+      <FloatingCTA units={units} />
     </>
   );
 }

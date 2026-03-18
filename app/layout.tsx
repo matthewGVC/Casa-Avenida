@@ -7,6 +7,7 @@ import CookieBanner from "@/components/layout/CookieBanner";
 import BackToTop from "@/components/layout/BackToTop";
 import MobileInquireBar from "@/components/layout/MobileInquireBar";
 import PageTransition from "@/components/animations/PageTransition";
+import { getUnits } from "@/lib/content";
 import "@/styles/globals.css";
 
 const raleway = Raleway({
@@ -104,11 +105,12 @@ const organizationSchema = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const units = getUnits();
   return (
     <html
       lang="en"
@@ -143,7 +145,7 @@ export default function RootLayout({
 
         <Footer />
         <BackToTop />
-        <MobileInquireBar />
+        <MobileInquireBar units={units} />
         <CookieBanner />
         <Analytics />
       </body>
