@@ -1,7 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import type { POI, POICategory } from "@/lib/types";
+
+const LeafletMap = dynamic(() => import("./LeafletMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full min-h-[360px] lg:min-h-[480px] bg-lunar border border-white/10 flex items-center justify-center">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-8 h-8 rounded-full border border-sapling/30 flex items-center justify-center">
+          <span className="font-display text-sapling text-sm">A</span>
+        </div>
+        <p className="font-heading text-white/20 text-[9px] tracking-widest">LOADING MAP…</p>
+      </div>
+    </div>
+  ),
+});
 
 const CATEGORY_LABELS: Record<POICategory | "all", string> = {
   all: "All",
@@ -73,68 +88,17 @@ export default function NeighborhoodMap({ pois }: NeighborhoodMapProps) {
 
       {/* Map + list layout */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        {/* Static map placeholder */}
-        <div className="lg:col-span-3 relative min-h-[360px] lg:min-h-[480px] bg-white/5 border border-white/10 overflow-hidden">
-          {/* Decorative grid overlay — evokes a map aesthetic */}
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: "linear-gradient(var(--color-sapling) 1px, transparent 1px), linear-gradient(90deg, var(--color-sapling) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
+        {/* Interactive Leaflet map */}
+        <div aria-hidden="true" className="lg:col-span-3 relative min-h-[360px] lg:min-h-[480px] border border-white/10 overflow-hidden">
+          <LeafletMap
+            filtered={filtered}
+            selectedPoi={selectedPoi}
+            onSelectPoi={setSelectedPoi}
           />
-
-          {/* Casa Avenida pin — center */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-full bg-sapling flex items-center justify-center shadow-[0_0_0_8px_rgba(223,209,167,0.15)]">
-                <span className="font-display text-lunar text-sm">A</span>
-              </div>
-              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-sapling" />
-            </div>
-          </div>
-
-          {/* POI pins — positioned relative to center */}
-          {filtered.map((poi, i) => {
-            // Simple spread positions around the center marker
-            const angle = (i / filtered.length) * 2 * Math.PI - Math.PI / 4;
-            const r = 28 + (i % 3) * 10; // 28-48% from center
-            const left = 50 + r * Math.cos(angle);
-            const top = 50 + r * Math.sin(angle);
-
-            return (
-              <button
-                key={poi.id}
-                onClick={() => setSelectedPoi(poi === selectedPoi ? null : poi)}
-                aria-label={`View ${poi.name}`}
-                className="absolute -translate-x-1/2 -translate-y-1/2 group"
-                style={{ left: `${Math.max(8, Math.min(92, left))}%`, top: `${Math.max(8, Math.min(92, top))}%` }}
-              >
-                <div
-                  className={`
-                    w-3 h-3 rounded-full border-2 border-lunar transition-transform duration-200 group-hover:scale-125
-                    ${CATEGORY_COLORS[poi.category]}
-                    ${selectedPoi?.id === poi.id ? "scale-150 ring-2 ring-sapling ring-offset-1 ring-offset-lunar" : ""}
-                  `}
-                />
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 font-heading text-[9px] tracking-heading text-white/70 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-lunar/80 px-1.5 py-0.5">
-                  {poi.name}
-                </span>
-              </button>
-            );
-          })}
-
-          {/* Address label */}
-          <div className="absolute bottom-4 left-4">
-            <p className="font-heading text-sapling/60 text-[9px] tracking-heading">
+          {/* Branded attribution */}
+          <div className="absolute bottom-3 left-3 z-[400] pointer-events-none">
+            <p className="font-heading text-sapling/40 text-[8px] tracking-heading">
               102 SE 5TH AVE · DELRAY BEACH
-            </p>
-          </div>
-
-          {/* Maps API notice */}
-          <div className="absolute top-3 right-3">
-            <p className="font-heading text-white/20 text-[8px] tracking-heading">
-              INTERACTIVE MAP COMING SOON
             </p>
           </div>
         </div>

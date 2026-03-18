@@ -329,3 +329,97 @@ body {
     padding-bottom: 44px; /* height of MobileInquireBar */
   }
 }
+
+/* ─────────────────────────────────────────────
+   Leaflet map overrides + Casa Avenida marker styles
+───────────────────────────────────────────── */
+
+/* Map container background */
+.leaflet-container {
+  background: var(--color-lunar);
+  font-family: var(--font-body);
+}
+
+/* Remove default tile focus ring */
+.leaflet-tile:focus {
+  outline: none;
+}
+
+/* Style Leaflet attribution to match brand — required for CARTO/OSM ToS */
+.leaflet-control-attribution {
+  background: rgba(55, 58, 54, 0.85) !important;
+  color: rgba(223, 209, 167, 0.35) !important;
+  font-size: 9px !important;
+  font-family: var(--font-ui) !important;
+  letter-spacing: 0.05em;
+  border: none !important;
+  padding: 2px 6px !important;
+}
+
+.leaflet-control-attribution a {
+  color: rgba(223, 209, 167, 0.5) !important;
+}
+
+/* Casa Avenida home pin */
+.ca-pin-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  height: 48px;
+}
+
+.ca-pin-home__dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-sapling);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-lunar);
+  box-shadow: 0 0 0 8px rgba(223, 209, 167, 0.15),
+              0 4px 16px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.ca-pin-home__tail {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid var(--color-sapling);
+  margin-top: -1px;
+}
+
+/* POI pins — base */
+.ca-pin-poi {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-lunar);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.ca-pin-poi:hover {
+  transform: scale(1.4);
+}
+
+.ca-pin-poi--selected {
+  width: 18px;
+  height: 18px;
+  border-color: var(--color-sapling);
+  box-shadow: 0 0 0 3px rgba(223, 209, 167, 0.4);
+  transform: scale(1.2);
+}
+
+/* POI category colors */
+.ca-pin-poi--restaurant    { background: #F59E0B; }
+.ca-pin-poi--hotel         { background: #006A8E; }
+.ca-pin-poi--beach         { background: #38BDF8; }
+.ca-pin-poi--fitness       { background: #10B981; }
+.ca-pin-poi--grocery       { background: #84CC16; }
+.ca-pin-poi--entertainment { background: #DFD1A7; }
