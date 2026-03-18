@@ -26,12 +26,12 @@ const nextConfig = {
           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
           // Fonts: self + Google Fonts CDN
           "font-src 'self' https://fonts.gstatic.com",
-          // Images: self + data URIs + Google Maps tiles
-          "img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com",
-          // Connect: self + Resend + MailerLite + Vercel Analytics
-          "connect-src 'self' https://api.resend.com https://connect.mailerlite.com https://vitals.vercel-insights.com",
-          // Frames: self only — virtual-tour page overrides this
-          "frame-src 'self' https://www.google.com",
+          // Images: self + data URIs + Google Maps tiles + Carto (Leaflet tiles)
+          "img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com https://*.cartocdn.com https://*.basemaps.cartocdn.com",
+          // Connect: self + Resend + MailerLite + Vercel Analytics + Carto tile fetches
+          "connect-src 'self' https://api.resend.com https://connect.mailerlite.com https://vitals.vercel-insights.com https://*.cartocdn.com https://*.basemaps.cartocdn.com",
+          // Frames: self + Google Maps + Kuula 360° tours
+          "frame-src 'self' https://www.google.com https://kuula.co",
           "object-src 'none'",
           "base-uri 'self'",
           "form-action 'self'",
@@ -58,7 +58,7 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: (baseHeaders.find((h) => h.key === 'Content-Security-Policy') || { value: '' })
-              .value.replace("frame-src 'self' https://www.google.com", "frame-src *"),
+              .value.replace("frame-src 'self' https://www.google.com https://kuula.co", "frame-src *"),
           },
         ],
       },
