@@ -7,16 +7,18 @@ import type { Unit } from "@/lib/types";
 import Badge from "@/components/ui/Badge";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { encodeImagePath } from "@/lib/content";
+import UnitCardInquireButton from "@/components/units/UnitCardInquireButton";
 
 interface ResidenceTeaserProps {
   units: Unit[];
+  allUnits: Unit[];
 }
 
 /**
  * Horizontal drag/swipe scroll of 8 unit cards.
  * Mouse: drag to scroll. Touch: native scroll.
  */
-export default function ResidenceTeaser({ units }: ResidenceTeaserProps) {
+export default function ResidenceTeaser({ units, allUnits }: ResidenceTeaserProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -79,7 +81,7 @@ export default function ResidenceTeaser({ units }: ResidenceTeaserProps) {
         style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
       >
         {units.map((unit) => (
-          <UnitCard key={unit.id} unit={unit} />
+          <UnitCard key={unit.id} unit={unit} allUnits={allUnits} />
         ))}
         {/* Trailing spacer */}
         <div className="shrink-0 w-6 lg:w-12" aria-hidden="true" />
@@ -95,10 +97,10 @@ export default function ResidenceTeaser({ units }: ResidenceTeaserProps) {
   );
 }
 
-function UnitCard({ unit }: { unit: Unit }) {
+function UnitCard({ unit, allUnits }: { unit: Unit; allUnits: Unit[] }) {
   return (
     <Link
-      href={`/residences/${unit.id}`}
+      href={`/floorplans?unit=${unit.id}`}
       className="group relative shrink-0 w-[300px] lg:w-[360px] aspect-[3/4] overflow-hidden bg-lunar block"
       tabIndex={0}
       aria-label={`${unit.name} — ${unit.status}`}
@@ -142,6 +144,9 @@ function UnitCard({ unit }: { unit: Unit }) {
         <p className="font-heading text-sapling/70 text-[10px] tracking-heading mt-2 group-hover:text-sapling transition-colors duration-200">
           {unit.priceDisplay}
         </p>
+        <div className="mt-3">
+          <UnitCardInquireButton unit={unit} allUnits={allUnits} />
+        </div>
       </div>
     </Link>
   );

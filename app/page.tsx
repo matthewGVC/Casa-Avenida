@@ -81,7 +81,7 @@ export default function HomePage() {
       <CredibilityStrip />
       <StatsStrip />
       <AmenitiesSection />
-      <ResidenceTeaser units={units} />
+      <ResidenceTeaser units={units} allUnits={units} />
       <ArchitectureFeature />
       <ConstructionTimeline data={settings.constructionTimeline} />
       <GalleryTeaser images={gallery} />

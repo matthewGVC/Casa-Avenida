@@ -4,19 +4,21 @@ import type { Unit } from "@/lib/types";
 import Badge from "@/components/ui/Badge";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 import { formatSF, encodeImagePath } from "@/lib/content";
+import UnitCardInquireButton from "./UnitCardInquireButton";
 
 interface UnitCardProps {
   unit: Unit;
+  allUnits: Unit[];
   /** Stagger delay in ms */
   delay?: number;
 }
 
-export default function UnitCard({ unit }: UnitCardProps) {
+export default function UnitCard({ unit, allUnits }: UnitCardProps) {
   const hasHero = Boolean(unit.heroImage);
 
   return (
     <Link
-      href={`/residences/${unit.id}`}
+      href={`/floorplans?unit=${unit.id}`}
       className="group block bg-lunar border border-white/10 hover:border-sapling/40 transition-colors duration-300"
       aria-label={`View ${unit.name} — ${unit.tagline}`}
     >
@@ -65,6 +67,14 @@ export default function UnitCard({ unit }: UnitCardProps) {
           <Spec label="SF" value={formatSF(unit.underAirSF)} />
           <div className="w-px h-4 bg-white/10" />
           <Spec label="LEVELS" value={unit.levels} />
+        </div>
+
+        {/* Action row */}
+        <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
+          <span className="font-heading text-sapling/50 text-[10px] tracking-heading">
+            VIEW FLOORPLAN →
+          </span>
+          <UnitCardInquireButton unit={unit} allUnits={allUnits} />
         </div>
       </div>
     </Link>

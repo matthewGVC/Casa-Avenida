@@ -74,7 +74,7 @@ export default function ResidencesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-white/10">
             {units.map((unit, i) => (
               <ScrollFade key={unit.id} delay={i * 60} className="bg-lunar">
-                <UnitCard unit={unit} />
+                <UnitCard unit={unit} allUnits={units} />
               </ScrollFade>
             ))}
           </div>
