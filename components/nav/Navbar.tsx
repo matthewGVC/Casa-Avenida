@@ -79,7 +79,7 @@ export default function Navbar() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`font-heading text-xs tracking-nav hover:tracking-nav-hover transition-all duration-200 pb-0.5 border-b ${
+                    className={`font-heading text-xs tracking-nav hover:tracking-nav-hover transition-all duration-300 pb-0.5 border-b ${
                       isActive
                         ? "text-sapling border-sapling"
                         : "text-white/80 border-transparent hover:text-sapling hover:border-sapling"

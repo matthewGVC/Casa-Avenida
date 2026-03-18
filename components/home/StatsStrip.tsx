@@ -14,7 +14,7 @@ const STATS = [
 export default function StatsStrip() {
   return (
     <section
-      className="bg-lunar py-20 lg:py-28 px-6 lg:px-12 border-b border-white/10"
+      className="bg-lunar-warm gold-edge-top py-20 lg:py-28 px-6 lg:px-12 border-b border-white/10"
       aria-label="Key figures"
     >
       <div className="max-w-[1440px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6">

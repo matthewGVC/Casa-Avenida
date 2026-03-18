@@ -12,6 +12,10 @@
   --color-sapling: #DFD1A7;
   --color-white:   #FFFFFF;
 
+  /* Extended — gold atmosphere */
+  --color-deep:    #14110A;   /* Rich warm gold-black — darkest anchor */
+  --color-gold-warm: #C9A84C; /* Richer, deeper gold for gradient stops */
+
   /* Font families (applied via layout.tsx className vars) */
   --font-display:  var(--font-quake), 'Cormorant Garamond', Georgia, serif;
   --font-heading:  var(--font-raleway), 'Helvetica Neue', Helvetica, sans-serif;
@@ -34,7 +38,15 @@ html {
 }
 
 body {
-  background-color: var(--color-lunar);
+  /* Warm gold atmospheric gradient — deep gold-black at top fades into lunar */
+  background: linear-gradient(
+    180deg,
+    var(--color-deep) 0%,
+    #22200F 6%,
+    var(--color-lunar) 20%,
+    var(--color-lunar) 100%
+  ) fixed;
+  background-color: var(--color-lunar); /* fallback */
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -95,10 +107,12 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  /* Warm-tinted noise — feTurbulence colored gold via feColorMatrix */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0.78 0 1 0 0 0.62 0 0 1 0 0.27 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
-  background-size: 256px 256px;
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
 }
 
 /* ─────────────────────────────────────────────
@@ -130,6 +144,75 @@ body {
 
 .ken-burns {
   animation: kenburns 8s ease-in-out forwards;
+}
+
+/* ─────────────────────────────────────────────
+   Hero Radial Vignette
+   Soft dark pool behind center content — no hard edges
+───────────────────────────────────────────── */
+.hero-radial-vignette {
+  background: radial-gradient(
+    ellipse 55% 55% at 50% 50%,
+    rgba(20, 14, 4, 0.52) 0%,   /* warm gold-black, not pure black */
+    transparent 100%
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Gold Atmosphere Utilities
+   Layered effects for a warm, gold-forward palette
+───────────────────────────────────────────── */
+
+/* Hairline gold top-edge glow — applied to section wrappers */
+.gold-edge-top {
+  position: relative;
+}
+.gold-edge-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-sapling) 30%,
+    var(--color-gold-warm) 50%,
+    var(--color-sapling) 70%,
+    transparent
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Warm gold glow bloom — atmospheric bottom-up glow on dark sections */
+.gold-glow-bottom {
+  position: relative;
+}
+.gold-glow-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 100%,
+    rgba(201, 168, 76, 0.07) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Section with a subtle warm gradient surface */
+.bg-lunar-warm {
+  background: linear-gradient(
+    180deg,
+    #2A2415 0%,
+    var(--color-lunar) 25%,
+    var(--color-lunar) 100%
+  );
 }
 
 /* ─────────────────────────────────────────────
@@ -222,6 +305,17 @@ body {
   border: none;
   border-top: 1px solid var(--color-sapling);
   opacity: 0.4;
+}
+
+/* ─────────────────────────────────────────────
+   Unit card luxury hover glow
+───────────────────────────────────────────── */
+.unit-card-hover {
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.unit-card-hover:hover {
+  border-color: rgba(223, 209, 167, 0.3);
+  box-shadow: 0 0 0 1px rgba(223, 209, 167, 0.08), 0 8px 32px rgba(223, 209, 167, 0.06);
 }
 
 /* Safe area bottom — for MobileInquireBar on notched devices */

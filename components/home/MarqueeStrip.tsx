@@ -16,7 +16,7 @@ export default function MarqueeStrip({ enabled = true }: MarqueeStripProps) {
   return (
     <div
       data-marquee-enabled="true"
-      className="bg-lunar border-y border-white/10 overflow-hidden py-3"
+      className="bg-lunar border-y border-white/10 gold-edge-top overflow-hidden py-3"
       aria-hidden="true"
     >
       {/* Two identical spans — first drives the animation, second is the seamless repeat */}

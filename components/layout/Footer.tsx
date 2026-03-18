@@ -19,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-lunar border-t border-white/10 pt-16 pb-8 px-6 lg:px-12"
+      className="bg-lunar border-t border-sapling/20 pt-16 pb-8 px-6 lg:px-12"
       role="contentinfo"
     >
       <div className="max-w-[1440px] mx-auto">

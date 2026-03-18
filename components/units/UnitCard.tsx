@@ -19,7 +19,7 @@ export default function UnitCard({ unit, allUnits }: UnitCardProps) {
   return (
     <Link
       href={`/floorplans?unit=${unit.id}`}
-      className="group block bg-lunar border border-white/10 hover:border-sapling/40 transition-colors duration-300"
+      className="group block bg-lunar border border-white/10 unit-card-hover"
       aria-label={`View ${unit.name} — ${unit.tagline}`}
     >
       {/* Image */}
