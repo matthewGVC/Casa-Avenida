@@ -6,14 +6,15 @@ interface AnnouncementBannerProps {
   message: string;
 }
 
-/**
- * Slim gold banner pinned above the navbar.
- * Dismissible per session via localStorage.
- */
 export default function AnnouncementBanner({ message }: AnnouncementBannerProps) {
   const [visible, setVisible] = useState(true);
 
   if (!visible) return null;
+
+  const dismiss = () => {
+    setVisible(false);
+    window.dispatchEvent(new CustomEvent("banner-dismissed"));
+  };
 
   return (
     <div
@@ -31,7 +32,6 @@ export default function AnnouncementBanner({ message }: AnnouncementBannerProps)
         height: 36,
       }}
     >
-      {/* Shimmer line */}
       <div aria-hidden="true" style={{
         position: "absolute",
         bottom: 0, left: "20%", right: "20%", height: 1,
@@ -39,7 +39,6 @@ export default function AnnouncementBanner({ message }: AnnouncementBannerProps)
         pointerEvents: "none",
       }} />
 
-      {/* Dot + message */}
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <span aria-hidden="true" style={{
           width: 5, height: 5, borderRadius: "50%",
@@ -61,9 +60,8 @@ export default function AnnouncementBanner({ message }: AnnouncementBannerProps)
         </p>
       </div>
 
-      {/* Dismiss */}
       <button
-        onClick={() => setVisible(false)}
+        onClick={dismiss}
         aria-label="Dismiss announcement"
         style={{
           position: "absolute", right: 16,

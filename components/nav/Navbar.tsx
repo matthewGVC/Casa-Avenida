@@ -18,15 +18,24 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
+const BANNER_HEIGHT = 36;
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [bannerOffset, setBannerOffset] = useState(BANNER_HEIGHT);
   const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onDismiss = () => setBannerOffset(0);
+    window.addEventListener("banner-dismissed", onDismiss);
+    return () => window.removeEventListener("banner-dismissed", onDismiss);
   }, []);
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
@@ -37,7 +46,7 @@ export default function Navbar() {
         role="banner"
         style={{
           position: "fixed",
-          top: 0, left: 0, right: 0,
+          top: bannerOffset, left: 0, right: 0,
           zIndex: 50,
           height: scrolled ? 64 : 84,
           background: scrolled
@@ -47,7 +56,7 @@ export default function Navbar() {
           WebkitBackdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
           borderBottom: "1px solid",
           borderBottomColor: scrolled ? "rgba(223,209,167,0.10)" : "transparent",
-          transition: "height 0.4s ease, background 0.4s ease, border-color 0.4s ease",
+          transition: "top 0.3s ease, height 0.4s ease, background 0.4s ease, border-color 0.4s ease",
         }}
       >
         <div aria-hidden="true" style={{
@@ -77,7 +86,6 @@ export default function Navbar() {
               return (
                 <li key={href} style={{ position: "relative" }}>
                   <NavLink href={href} label={label} active={active} />
-
                 </li>
               );
             })}
