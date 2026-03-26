@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { AnimatePresence } from "motion/react";
 import Image from "next/image";
 import type { GalleryImage, GalleryCategory } from "@/lib/types";
 import { getGalleryImageSrc } from "@/lib/content";
@@ -196,16 +195,14 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
       )}
 
       {/* ── Lightbox ──────────────────────────────────────────────── */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <Lightbox
-            images={filtered}
-            currentIndex={lightboxIndex}
-            onClose={() => setLightboxIndex(null)}
-            onNavigate={setLightboxIndex}
-          />
-        )}
-      </AnimatePresence>
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={filtered}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNavigate={setLightboxIndex}
+        />
+      )}
     </>
   );
 }
