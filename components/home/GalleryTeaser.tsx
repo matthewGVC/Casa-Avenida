@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { GalleryImage } from "@/lib/types";
 
 import ScrollFade from "@/components/animations/ScrollFade";
-import { BLUR_DATA_URL, getGalleryImageSrc } from "@/lib/content";
+import { getGalleryImageSrc } from "@/lib/content";
 
 interface GalleryTeaserProps {
   images: GalleryImage[];
@@ -19,7 +19,7 @@ export default function GalleryTeaser({ images }: GalleryTeaserProps) {
 
   return (
     <section
-      className="bg-lunar py-24 lg:py-32 px-6 lg:px-12"
+      className="bg-lunar gold-edge-top py-24 lg:py-32 px-6 lg:px-12"
       aria-labelledby="gallery-teaser-heading"
     >
       <div className="max-w-[1440px] mx-auto">
@@ -52,14 +52,13 @@ export default function GalleryTeaser({ images }: GalleryTeaserProps) {
                 className="relative block overflow-hidden group"
                 aria-label={`View gallery — ${img.title}`}
               >
-                <div className="relative w-full aspect-[4/3]">
+                <div className="relative w-full aspect-[4/3] bg-[#373A36]">
                   <Image
                     src={getGalleryImageSrc(img)}
                     alt={img.alt}
                     fill
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                    placeholder="blur"
-                    blurDataURL={BLUR_DATA_URL}
+                    placeholder="empty"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>

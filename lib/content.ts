@@ -231,8 +231,9 @@ export function formatSF(sf: number): string {
 }
 
 /**
- * Derive a blur data URL placeholder for missing images.
- * Returns a 1x1 pixel Lunar (#373A36) in base64.
+ * 1×1 SVG in Lunar (#373A36) — used as a neutral dark placeholder.
+ * NOTE: prefer placeholder="empty" + bg-[#373A36] on the container.
+ * This constant is kept only for hero images that need a blurred transition.
  */
 export const BLUR_DATA_URL =
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect fill='%23373A36'/%3E%3C/svg%3E";

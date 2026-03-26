@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
-import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
+import { encodeImagePath } from "@/lib/content";
 
 interface HeroCarouselProps {
   images: string[];
@@ -61,8 +61,7 @@ export default function HeroCarousel({ images }: HeroCarouselProps) {
               fill
               priority={i === 0}
               className={`object-cover ${isActive ? "ken-burns" : ""}`}
-              placeholder="blur"
-              blurDataURL={BLUR_DATA_URL}
+              placeholder="empty"
               sizes="100vw"
             />
           </div>

@@ -45,6 +45,12 @@ export default function HeroSection({ images }: HeroSectionProps) {
         aria-hidden="true"
       />
 
+      {/* Radial vignette — softens center of image behind content, no hard edges */}
+      <div
+        className="hero-radial-vignette absolute inset-0 z-[15] pointer-events-none"
+        aria-hidden="true"
+      />
+
       {/* Scroll-linked content */}
       <motion.div
         style={{ opacity, scale, y: translateY }}
@@ -71,7 +77,7 @@ export default function HeroSection({ images }: HeroSectionProps) {
         <MagneticButton strength={4} radius={40}>
           <Link
             href="/residences"
-            className="btn-sweep overflow-hidden font-heading text-xs tracking-nav px-8 py-4 border border-sapling text-sapling hover:text-lunar transition-colors duration-300"
+            className="btn-sweep inline-flex items-center font-heading text-xs tracking-nav px-8 py-4 border border-sapling text-sapling hover:text-lunar transition-colors duration-300"
           >
             EXPLORE RESIDENCES
           </Link>

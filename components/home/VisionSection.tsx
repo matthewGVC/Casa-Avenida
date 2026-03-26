@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ScrollFade from "@/components/animations/ScrollFade";
-import { BLUR_DATA_URL, encodeImagePath } from "@/lib/content";
+import { encodeImagePath } from "@/lib/content";
 
 /**
  * Two-column Vision/Story section.
@@ -12,7 +12,7 @@ export default function VisionSection() {
   const heroImage = encodeImagePath("/images/gallery/Rendered Shot.jpg");
 
   return (
-    <section className="bg-lunar py-24 lg:py-36 px-6 lg:px-12" aria-labelledby="vision-heading">
+    <section className="bg-lunar-warm gold-edge-top py-24 lg:py-36 px-6 lg:px-12" aria-labelledby="vision-heading">
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
         {/* Left — editorial copy */}
@@ -38,14 +38,13 @@ export default function VisionSection() {
 
         {/* Right — render */}
         <ScrollFade delay={150}>
-          <div className="relative aspect-[3/4] w-full overflow-hidden">
+          <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#373A36]">
             <Image
               src={heroImage}
               alt="Casa Avenida — architectural render, Delray Beach"
               fill
               className="object-cover"
-              placeholder="blur"
-              blurDataURL={BLUR_DATA_URL}
+              placeholder="empty"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

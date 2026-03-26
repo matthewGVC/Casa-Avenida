@@ -58,7 +58,7 @@ const AMENITIES = [
 export default function AmenitiesSection() {
   return (
     <section
-      className="bg-lunar py-24 lg:py-36 px-6 lg:px-12"
+      className="bg-lunar gold-edge-top gold-glow-bottom py-24 lg:py-36 px-6 lg:px-12"
       aria-labelledby="amenities-heading"
     >
       <div className="max-w-[1440px] mx-auto">

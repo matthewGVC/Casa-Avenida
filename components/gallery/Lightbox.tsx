@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
 import type { GalleryImage } from "@/lib/types";
-import { getGalleryImageSrc, BLUR_DATA_URL } from "@/lib/content";
+import { getGalleryImageSrc } from "@/lib/content";
 
 interface LightboxProps {
   images: GalleryImage[];
@@ -97,15 +97,14 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
         </button>
 
         {/* Image */}
-        <div className="relative w-full h-full max-w-5xl">
+        <div className="relative w-full h-full max-w-5xl bg-[#373A36]">
           <Image
             key={current.id}
             src={getGalleryImageSrc(current)}
             alt={current.alt}
             fill
             className="object-contain"
-            placeholder="blur"
-            blurDataURL={BLUR_DATA_URL}
+            placeholder="empty"
             sizes="100vw"
             priority
           />

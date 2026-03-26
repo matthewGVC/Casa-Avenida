@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { getUnits } from "@/lib/content";
 import FloorplansViewer from "@/components/floorplans/FloorplansViewer";
@@ -62,7 +63,9 @@ export default function FloorplansPage() {
       {/* Viewer */}
       <section className="bg-lunar py-16 lg:py-24 px-6 lg:px-12">
         <div className="max-w-[1440px] mx-auto">
-          <FloorplansViewer units={units} />
+          <Suspense fallback={null}>
+            <FloorplansViewer units={units} />
+          </Suspense>
         </div>
       </section>
     </>

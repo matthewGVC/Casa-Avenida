@@ -10,10 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lunar:   "#373A36",
-        saddle:  "#4F2C1D",
-        bahama:  "#006A8E",
-        sapling: "#DFD1A7",
+        lunar:      "#373A36",
+        saddle:     "#4F2C1D",
+        bahama:     "#006A8E",
+        sapling:    "#DFD1A7",
+        deep:       "#14110A",   /* warm gold-black */
+        "gold-warm": "#C9A84C", /* richer accent gold */
       },
       fontFamily: {
         display: ["var(--font-quake)", "Cormorant Garamond", "Georgia", "serif"],

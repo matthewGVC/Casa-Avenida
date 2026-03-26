@@ -7,12 +7,15 @@ export const metadata: Metadata = {
     "Experience Casa Avenida from anywhere — an immersive virtual tour of the Brisa and Noir finish collections.",
 };
 
-const TOUR_URL = process.env.NEXT_PUBLIC_VIRTUAL_TOUR_URL ?? "";
+// Kuula embed — collection tour for Casa Avenida Unit 8
+const TOUR_URL =
+  process.env.NEXT_PUBLIC_VIRTUAL_TOUR_URL ??
+  "https://kuula.co/share/collection/7HylB?logo=1&info=0&logosize=136&fs=1&vr=1&zoom=1&autorotate=0.08&autop=10&autopalt=1&thumbs=2&margin=6&alpha=0.81&inst=0";
 
 export default function VirtualTourPage() {
   return (
     <>
-      {/* Minimal header — nav auto-hides on this page via scroll */}
+      {/* Minimal header */}
       <div className="bg-lunar pt-20 pb-4 px-6 lg:px-12">
         <div className="max-w-[1440px] mx-auto">
           <ScrollFade>
@@ -26,39 +29,21 @@ export default function VirtualTourPage() {
         </div>
       </div>
 
-      {/* Tour embed */}
-      <div className="bg-black relative" style={{ minHeight: "80vh" }}>
-        {TOUR_URL ? (
-          <iframe
-            src={TOUR_URL}
-            title="Casa Avenida Virtual Tour"
-            className="w-full border-0"
-            style={{ minHeight: "80vh", height: "80vh" }}
-            allow="fullscreen; xr-spatial-tracking; gyroscope; accelerometer"
-            loading="lazy"
-          />
-        ) : (
-          /* Placeholder until team provides URL */
-          <div className="flex flex-col items-center justify-center min-h-[80vh] text-center px-6">
-            {/* Pulsing "A" loading indicator per spec */}
-            <div className="relative mb-8">
-              <div className="w-20 h-20 rounded-full border border-sapling/20 flex items-center justify-center animate-pulse">
-                <span className="font-display text-sapling text-3xl">A</span>
-              </div>
-              <div className="absolute inset-0 rounded-full border border-sapling/10 animate-ping" />
-            </div>
-            <p className="font-heading text-sapling/60 text-xs tracking-heading mb-3">
-              VIRTUAL TOUR
-            </p>
-            <p className="font-body text-white/40 text-sm max-w-sm leading-relaxed">
-              The immersive tour experience is being prepared. Check back soon — or{" "}
-              <a href="/contact" className="text-sapling/70 hover:text-sapling transition-colors underline">
-                contact us
-              </a>{" "}
-              to schedule a private in-person preview.
-            </p>
-          </div>
-        )}
+      {/* Tour embed — Kuula 360° viewer */}
+      <div className="bg-black relative" style={{ height: "85vh" }}>
+        <iframe
+          src={TOUR_URL}
+          title="Casa Avenida Virtual Tour"
+          name="Casa Avenida Virtual Tour"
+          frameBorder={0}
+          width="100%"
+          className="w-full border-0 block"
+          style={{ height: "85vh" }}
+          scrolling="no"
+          allow="vr; xr; accelerometer; gyroscope; autoplay; fullscreen"
+          allowFullScreen
+          loading="eager"
+        />
       </div>
 
       {/* Disclaimer */}

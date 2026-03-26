@@ -34,7 +34,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/1 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-1/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U1 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U1 All Floors.pdf",
     "heroImage": "/images/gallery/Brisa Finishes/Living Angle 1.jpg",
@@ -79,7 +79,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/2 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-2/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U2 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U2 All Floors.pdf",
     "heroImage": "/images/gallery/Brisa Finishes/Pool Angle 1.jpg",
@@ -123,7 +123,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/3 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-3/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U3 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U3 All Floors.pdf",
     "heroImage": "/images/gallery/Noir Finishes/Terrace Angle 1 v2.jpg",
@@ -168,7 +168,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/4 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-4/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U4 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U4 All Floors.pdf",
     "heroImage": "/images/gallery/Noir Finishes/Primary Bed Angle 1 - Wide.jpg",
@@ -214,7 +214,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/5 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-5/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U5 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U5 All Floors.pdf",
     "heroImage": "/images/gallery/Brisa Finishes/Kitchen Angle 3.jpg",
@@ -259,7 +259,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/6 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-6/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U6 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U6 All Floors.pdf",
     "heroImage": "/images/gallery/Brisa Finishes/Terrace Angle 1 v2.jpg",
@@ -303,7 +303,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/7 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-7/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U7 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U7 All Floors.pdf",
     "heroImage": "/images/gallery/Noir Finishes/Living Angle 1.jpg",
@@ -348,7 +348,7 @@
       "third": "Primary Suite, 2 Guest Bedrooms, Laundry",
       "fourth": "Rooftop Terrace, Summer Kitchen, Lounge"
     },
-    "allFloorsImage": "/images/floorplans/8 FP Info Tab.webp",
+    "allFloorsImage": "/images/floorplans/unit-8/All Floors.png",
     "floorplanPdf": "/pdfs/floorplans/U8 Floorplan Handout - Landscape Branded.pdf",
     "allFloorsPdf": "/pdfs/floorplans/U8 All Floors.pdf",
     "heroImage": "/images/gallery/Exterior 1 Expanded.jpg",

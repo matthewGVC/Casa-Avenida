@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Unit, FinishesPackage } from "@/lib/types";
 import FloorplanViewer from "@/components/units/FloorplanViewer";
-import { BLUR_DATA_URL, formatSF, encodeImagePath } from "@/lib/content";
+import { formatSF, encodeImagePath } from "@/lib/content";
 import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 type TabId = "overview" | "floorplan" | "finishes" | "inquire";
@@ -65,15 +65,14 @@ export default function UnitDetailTabs({ unit, finishes, initialTab = "overview"
             <div id="panel-overview" role="tabpanel">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                 {/* Left: hero image */}
-                <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px]">
+                <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] bg-[#373A36]">
                   {unit.heroImage ? (
                     <Image
                       src={encodeImagePath(unit.heroImage)}
                       alt={`${unit.name} — ${unit.tagline}`}
                       fill
                       className="object-cover"
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
+                      placeholder="empty"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       priority
                     />
@@ -183,15 +182,14 @@ export default function UnitDetailTabs({ unit, finishes, initialTab = "overview"
                 .map((pkg) => (
                   <div key={pkg.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                     {/* Hero image */}
-                    <div className="relative aspect-[4/3]">
+                    <div className="relative aspect-[4/3] bg-[#373A36]">
                       {pkg.heroImage ? (
                         <Image
                           src={encodeImagePath(pkg.heroImage)}
                           alt={`${pkg.name} finish package`}
                           fill
                           className="object-cover"
-                          placeholder="blur"
-                          blurDataURL={BLUR_DATA_URL}
+                          placeholder="empty"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                       ) : (

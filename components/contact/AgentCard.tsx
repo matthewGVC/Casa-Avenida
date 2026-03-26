@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Agent } from "@/lib/types";
-import { BLUR_DATA_URL, formatPhone, encodeImagePath } from "@/lib/content";
+import { formatPhone, encodeImagePath } from "@/lib/content";
 
 interface AgentCardProps {
   agent: Agent;
@@ -13,15 +13,14 @@ export default function AgentCard({ agent }: AgentCardProps) {
   return (
     <div className="border border-white/10 p-6 flex gap-5 items-start">
       {/* Headshot */}
-      <div className="relative w-16 h-16 lg:w-20 lg:h-20 shrink-0 overflow-hidden bg-white/5">
+      <div className="relative w-16 h-16 lg:w-20 lg:h-20 shrink-0 overflow-hidden bg-[#373A36]">
         {hasPhoto ? (
           <Image
             src={encodeImagePath(agent.headshot)}
             alt={agent.name}
             fill
             className="object-cover"
-            placeholder="blur"
-            blurDataURL={BLUR_DATA_URL}
+            placeholder="empty"
             sizes="80px"
           />
         ) : (
