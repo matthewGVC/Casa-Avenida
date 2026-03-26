@@ -31,9 +31,7 @@ export default function VisionSection() {
           <p className="font-body text-white/70 text-lg leading-relaxed max-w-md">
             Casa Avenida reimagines the South Florida townhome — eight architecturally precise residences, each commanding four levels of private living, steps from the energy of Atlantic Avenue and the Atlantic Ocean beyond.
           </p>
-          <p className="font-body text-white/50 text-base leading-relaxed max-w-md mt-4">
-            Developed by Kastelo &amp; 4TRO. Designed by RWB-Linares Architecture. Interiors by Stef Leonel and Ava Gray. Completion Q2 2027.
-          </p>
+
         </ScrollFade>
 
         {/* Right — render */}

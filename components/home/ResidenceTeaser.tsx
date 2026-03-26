@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Unit } from "@/lib/types";
@@ -14,37 +14,33 @@ interface ResidenceTeaserProps {
   allUnits: Unit[];
 }
 
-/**
- * Horizontal drag/swipe scroll of 8 unit cards.
- * Mouse: drag to scroll. Touch: native scroll.
- */
+const CARD_W = 340;
+const CARD_GAP = 16;
+const SCROLL_SPEED = 0.4;
+
 export default function ResidenceTeaser({ units, allUnits }: ResidenceTeaserProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
+  const animRef = useRef<number>(0);
+  const paused = useRef(false);
+  const offset = useRef(0);
 
-  const onMouseDown = (e: React.MouseEvent) => {
-    const track = trackRef.current;
-    if (!track) return;
-    isDragging.current = true;
-    startX.current = e.pageX - track.offsetLeft;
-    scrollLeft.current = track.scrollLeft;
-    track.style.cursor = "grabbing";
-  };
+  const doubled = [...units, ...units];
+  const halfWidth = units.length * (CARD_W + CARD_GAP);
 
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging.current || !trackRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - trackRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1.2;
-    trackRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  const onMouseUp = () => {
-    isDragging.current = false;
-    if (trackRef.current) trackRef.current.style.cursor = "grab";
-  };
+  useEffect(() => {
+    const tick = () => {
+      if (!paused.current && trackRef.current) {
+        offset.current += SCROLL_SPEED;
+        if (offset.current >= halfWidth) {
+          offset.current = 0;
+        }
+        trackRef.current.style.transform = "translateX(-" + offset.current + "px)";
+      }
+      animRef.current = requestAnimationFrame(tick);
+    };
+    animRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animRef.current);
+  }, [halfWidth]);
 
   return (
     <section className="bg-lunar py-24 lg:py-32 overflow-hidden" aria-labelledby="residences-teaser-heading">
@@ -70,28 +66,27 @@ export default function ResidenceTeaser({ units, allUnits }: ResidenceTeaserProp
         </div>
       </div>
 
-      {/* Scrollable track */}
+      {/* Carousel track — overflow clip on parent, no scroll */}
       <div
-        ref={trackRef}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseUp}
-        className="flex gap-4 overflow-x-auto scrollbar-none px-6 lg:px-12 cursor-grab select-none"
-        style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+        className="relative"
+        style={{ overflow: "hidden" }}
+        onMouseEnter={() => { paused.current = true; }}
+        onMouseLeave={() => { paused.current = false; }}
       >
-        {units.map((unit) => (
-          <UnitCard key={unit.id} unit={unit} allUnits={allUnits} />
-        ))}
-        {/* Trailing spacer */}
-        <div className="shrink-0 w-6 lg:w-12" aria-hidden="true" />
-      </div>
-
-      {/* Scroll hint */}
-      <div className="flex items-center justify-center gap-3 mt-8 px-6" aria-hidden="true">
-        <div className="w-8 h-px bg-sapling/30" />
-        <span className="font-heading text-white/30 text-[9px] tracking-widest">DRAG TO EXPLORE</span>
-        <div className="w-8 h-px bg-sapling/30" />
+        <div
+          ref={trackRef}
+          style={{
+            display: "flex",
+            gap: CARD_GAP,
+            paddingLeft: 48,
+            willChange: "transform",
+            width: "max-content",
+          }}
+        >
+          {doubled.map((unit, idx) => (
+            <UnitCard key={unit.id + "-" + idx} unit={unit} allUnits={allUnits} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -100,12 +95,12 @@ export default function ResidenceTeaser({ units, allUnits }: ResidenceTeaserProp
 function UnitCard({ unit, allUnits }: { unit: Unit; allUnits: Unit[] }) {
   return (
     <Link
-      href={`/floorplans?unit=${unit.id}`}
-      className="group relative shrink-0 w-[300px] lg:w-[360px] aspect-[3/4] overflow-hidden bg-lunar block"
+      href={"/floorplans?unit=" + unit.id}
+      className="group relative shrink-0 overflow-hidden bg-lunar block"
+      style={{ width: CARD_W, aspectRatio: "3/4" }}
       tabIndex={0}
-      aria-label={`${unit.name} — ${unit.status}`}
+      aria-label={unit.name + " — " + unit.status}
     >
-      {/* Background image or placeholder */}
       {unit.heroImage ? (
         <Image
           src={encodeImagePath(unit.heroImage)}
@@ -113,24 +108,21 @@ function UnitCard({ unit, allUnits }: { unit: Unit; allUnits: Unit[] }) {
           fill
           className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
           placeholder="empty"
-          sizes="360px"
+          sizes="340px"
           draggable={false}
         />
       ) : (
         <ImagePlaceholder className="absolute inset-0" />
       )}
 
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-lunar/90 via-lunar/20 to-transparent" />
 
-      {/* Unit number — top left */}
       <div className="absolute top-4 left-5 z-10">
         <span className="font-display text-sapling text-3xl leading-none">
           {unit.id.replace("unit-", "")}
         </span>
       </div>
 
-      {/* Info — bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
         <div className="flex items-end justify-between gap-2 mb-1">
           <p className="font-heading text-white text-sm tracking-heading">

@@ -7,13 +7,11 @@ import {
 } from "@/lib/content";
 
 import HeroSection            from "@/components/hero/HeroSection";
-import MarqueeStrip           from "@/components/home/MarqueeStrip";
 import VisionSection          from "@/components/home/VisionSection";
 import CredibilityStrip       from "@/components/home/CredibilityStrip";
 import StatsStrip             from "@/components/home/StatsStrip";
 import AmenitiesSection       from "@/components/home/AmenitiesSection";
 import ResidenceTeaser        from "@/components/home/ResidenceTeaser";
-import ArchitectureFeature    from "@/components/home/ArchitectureFeature";
 import ConstructionTimeline   from "@/components/home/ConstructionTimeline";
 import GalleryTeaser          from "@/components/home/GalleryTeaser";
 import NeighborhoodTeaser     from "@/components/home/NeighborhoodTeaser";
@@ -76,13 +74,11 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <HeroSection images={heroImages} />
-      <MarqueeStrip enabled />
       <VisionSection />
       <CredibilityStrip />
       <StatsStrip />
       <AmenitiesSection />
       <ResidenceTeaser units={units} allUnits={units} />
-      <ArchitectureFeature />
       <ConstructionTimeline data={settings.constructionTimeline} />
       <GalleryTeaser images={gallery} />
       <NeighborhoodTeaser />

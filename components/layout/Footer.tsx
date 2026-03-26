@@ -108,13 +108,21 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Team credits */}
+        <div className="border-t border-white/10 pt-6 mb-6 flex flex-wrap gap-x-8 gap-y-2">
+          <span className="font-ui text-xs text-white/35">Development: Kastelo &amp; 4TRO</span>
+          <span className="font-ui text-xs text-white/35">Architecture: RWB-Linares</span>
+          <span className="font-ui text-xs text-white/35">Interiors: Stef Leonel &amp; Ava Gray</span>
+          <span className="font-ui text-xs text-white/35">Sales: Douglas Elliman Real Estate</span>
+        </div>
+
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-white/30">
           <p className="font-ui text-xs">
             © {year} Casa Avenida. All rights reserved.
           </p>
           <p className="font-ui text-xs">
-            Developed by Kastelo &amp; 4TRO · Architecture by RWB-Linares
+            Completion Q2 2027
           </p>
         </div>
       </div>

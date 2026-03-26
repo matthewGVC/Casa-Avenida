@@ -2,94 +2,104 @@ import ScrollFade from "@/components/animations/ScrollFade";
 
 const AMENITIES = [
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="6" y="3" width="16" height="22" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-        <line x1="14" y1="3" x2="14" y2="25" stroke="currentColor" strokeWidth="1.5"/>
-        <rect x="11" y="11" width="6" height="8" rx="0.5" stroke="currentColor" strokeWidth="1.2"/>
-      </svg>
-    ),
+    number: "01",
     label: "PRIVATE ELEVATOR",
-    body: "Each residence commands a private in-unit elevator across all four levels — no shared lobbies, no shared corridors.",
+    body: "Each residence commands a private in-unit elevator spanning all four levels. No shared lobbies, no shared corridors — complete vertical privacy.",
+    detail: "4 LEVELS · IN-UNIT",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="4" y="16" width="20" height="8" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M8 16V12C8 9.79 9.79 8 12 8H16C18.21 8 20 9.79 20 12V16" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="14" cy="20" r="2" stroke="currentColor" strokeWidth="1.2"/>
-      </svg>
-    ),
+    number: "02",
     label: "COCKTAIL POOL + GARDEN",
-    body: "Ground-level private pool with a planted garden — a sanctuary that separates Casa Avenida from any other Delray address.",
+    body: "A ground-level private pool framed by a curated garden. An outdoor sanctuary that makes Casa Avenida unlike any other Delray Beach address.",
+    detail: "PRIVATE · GROUND LEVEL",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M4 18H24V22H4V18Z" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M8 18V10H20V18" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M4 10H24" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M14 4V10" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="14" cy="4" r="1.5" stroke="currentColor" strokeWidth="1.2"/>
-      </svg>
-    ),
+    number: "03",
     label: "ROOFTOP TERRACE",
-    body: "The fourth level opens to a private rooftop terrace above Delray Beach — sunset views, summer kitchen, and open sky.",
+    body: "The fourth level opens entirely to sky — a private rooftop terrace with summer kitchen and unobstructed views above the Delray Beach roofline.",
+    detail: "SUMMER KITCHEN · FOURTH LEVEL",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="3" y="14" width="22" height="10" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M7 14V10" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M21 14V10" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M7 10H21" stroke="currentColor" strokeWidth="1.5"/>
-        <circle cx="20" cy="20" r="2.5" fill="currentColor" opacity="0.3" stroke="currentColor" strokeWidth="1"/>
-        <path d="M18 20H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
+    number: "04",
     label: "PRIVATE GARAGE + EV",
-    body: "A private 2-car garage with dedicated EV charging — direct-entry access, no valet, no waiting.",
+    body: "A private two-car garage with dedicated EV charging. Direct-entry access into your residence — no valet, no waiting, no compromises.",
+    detail: "2-CAR · EV CHARGING",
   },
 ];
 
-/**
- * Full-bleed dark amenities section with Bahama Blue accent details.
- */
 export default function AmenitiesSection() {
   return (
     <section
-      className="bg-lunar gold-edge-top gold-glow-bottom py-24 lg:py-36 px-6 lg:px-12"
+      className="bg-lunar py-24 lg:py-36 px-6 lg:px-12"
       aria-labelledby="amenities-heading"
     >
       <div className="max-w-[1440px] mx-auto">
-        <ScrollFade className="mb-16 lg:mb-20">
-          <p className="font-heading text-sapling/60 text-xs tracking-heading mb-4">
-            INCLUDED IN EVERY RESIDENCE
-          </p>
-          <h2
-            id="amenities-heading"
-            className="font-display text-white text-[clamp(2rem,4vw,3.5rem)] leading-tight"
-          >
-            CRAFTED FOR<br />EXCEPTIONAL LIVING
-          </h2>
+
+        {/* Header */}
+        <ScrollFade className="mb-20 lg:mb-28">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <p className="font-heading text-sapling/50 text-xs tracking-heading mb-4">
+                INCLUDED IN EVERY RESIDENCE
+              </p>
+              <h2
+                id="amenities-heading"
+                className="font-display text-white text-[clamp(2.2rem,5vw,4rem)] leading-none"
+              >
+                CRAFTED FOR<br />EXCEPTIONAL LIVING
+              </h2>
+            </div>
+            <p className="font-body text-white/40 text-sm max-w-xs leading-relaxed lg:text-right">
+              Every detail considered. Every standard elevated. From ground to sky, each residence delivers four levels of uncompromised luxury.
+            </p>
+          </div>
         </ScrollFade>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
-          {AMENITIES.map(({ icon, label, body }, i) => (
-            <ScrollFade key={label} delay={i * 80}>
-              <div className="bg-lunar p-8 lg:p-10 flex flex-col gap-5 h-full">
-                <div className="text-bahama">{icon}</div>
-                <div className="gold-rule w-8" />
-                <h3 className="font-heading text-white text-xs tracking-heading">
-                  {label}
-                </h3>
-                <p className="font-body text-white/50 text-sm leading-relaxed">
+        {/* Amenity rows */}
+        <div className="space-y-0">
+          {AMENITIES.map(({ number, label, body, detail }, i) => (
+            <ScrollFade key={label} delay={i * 60}>
+              <div className="group grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr_200px] items-start gap-6 lg:gap-12 py-8 lg:py-10 border-t border-white/8 hover:border-sapling/20 transition-colors duration-500">
+
+                {/* Number */}
+                <div className="hidden lg:block">
+                  <span className="font-display text-sapling/20 text-4xl leading-none group-hover:text-sapling/35 transition-colors duration-500">
+                    {number}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <div>
+                  <span className="font-heading text-white text-sm tracking-heading leading-relaxed group-hover:text-sapling transition-colors duration-300">
+                    {label}
+                  </span>
+                </div>
+
+                {/* Body */}
+                <p className="font-body text-white/50 text-sm leading-relaxed group-hover:text-white/70 transition-colors duration-300">
                   {body}
                 </p>
+
+                {/* Detail tag */}
+                <div className="hidden lg:flex lg:justify-end">
+                  <span className="font-heading text-[9px] tracking-[0.14em] text-sapling/30 border border-sapling/15 px-3 py-1.5 group-hover:border-sapling/30 group-hover:text-sapling/50 transition-all duration-300">
+                    {detail}
+                  </span>
+                </div>
               </div>
             </ScrollFade>
           ))}
+
+          {/* Bottom rule */}
+          <div className="border-t border-white/8" />
         </div>
+
+        {/* Footer note */}
+        <ScrollFade delay={300} className="mt-12">
+          <p className="font-heading text-white/20 text-[10px] tracking-heading text-center">
+            FEATURES INCLUDED ACROSS ALL 8 RESIDENCES · COMPLETION Q2 2027
+          </p>
+        </ScrollFade>
       </div>
     </section>
   );

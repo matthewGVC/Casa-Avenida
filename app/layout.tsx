@@ -7,6 +7,7 @@ import CookieBanner from "@/components/layout/CookieBanner";
 import BackToTop from "@/components/layout/BackToTop";
 import MobileInquireBar from "@/components/layout/MobileInquireBar";
 import PageTransition from "@/components/animations/PageTransition";
+import AnnouncementBanner from "@/components/layout/AnnouncementBanner";
 import { getUnits } from "@/lib/content";
 import "@/styles/globals.css";
 
@@ -135,6 +136,7 @@ export default async function RootLayout({
         {/* CSS grain overlay — zero JS, position: fixed */}
         <div className="grain-overlay" aria-hidden="true" />
 
+        <AnnouncementBanner message="Now Starting Construction" />
         <Navbar />
 
         <main id="main-content">

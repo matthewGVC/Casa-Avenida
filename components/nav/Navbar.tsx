@@ -62,7 +62,7 @@ export default function Navbar() {
         }}>
           <Link href="/" aria-label="Casa Avenida" style={{ lineHeight: 0, flexShrink: 0 }}>
             <Image
-              src="/images/logos/casa%20avenida%20logos/Casa%20Avenida%20-%20Gold%20Bronze.svg"
+              src="/images/logos/casa%20avenida%20logos/LIGHT%20-%20CA%20Favicon.svg"
               alt="Casa Avenida" width={148} height={30} priority
               style={{ height: 26, width: "auto" }}
             />
@@ -77,14 +77,7 @@ export default function Navbar() {
               return (
                 <li key={href} style={{ position: "relative" }}>
                   <NavLink href={href} label={label} active={active} />
-                  {active && (
-                    <span aria-hidden="true" style={{
-                      position: "absolute", bottom: 2, left: "50%",
-                      transform: "translateX(-50%)", width: 3, height: 3,
-                      borderRadius: "50%", background: "#DFD1A7",
-                      boxShadow: "0 0 5px rgba(223,209,167,0.7)", display: "block",
-                    }} />
-                  )}
+
                 </li>
               );
             })}

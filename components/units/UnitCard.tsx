@@ -37,10 +37,7 @@ export default function UnitCard({ unit, allUnits }: UnitCardProps) {
           <ImagePlaceholder label={unit.name} className="absolute inset-0" />
         )}
 
-        {/* Status badge — bottom left */}
-        <div className="absolute bottom-3 left-3">
-          <Badge variant={unit.status} />
-        </div>
+
       </div>
 
       {/* Info */}
@@ -75,6 +72,9 @@ export default function UnitCard({ unit, allUnits }: UnitCardProps) {
             VIEW FLOORPLAN →
           </span>
           <UnitCardInquireButton unit={unit} allUnits={allUnits} />
+        </div>
+        <div className="mt-3">
+          <Badge variant={unit.status} />
         </div>
       </div>
     </Link>
