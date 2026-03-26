@@ -18,15 +18,6 @@
     "description": "One of Florida's finest Blue Wave beaches — a 5-minute walk from your front door."
   },
   {
-    "id": "rosemary-square",
-    "name": "Rosemary Square",
-    "category": "entertainment",
-    "lat": 26.7153,
-    "lng": -80.0534,
-    "distanceText": "10 min",
-    "description": "West Palm Beach's premier open-air lifestyle destination with flagship retailers and dining."
-  },
-  {
     "id": "lion-fish",
     "name": "Lionfish",
     "category": "restaurant",
@@ -45,40 +36,49 @@
     "description": "Waterfront dining on the Intracoastal with an elevated menu and stunning sunset views."
   },
   {
+    "id": "dada",
+    "name": "Dada",
+    "category": "restaurant",
+    "lat": 26.4622,
+    "lng": -80.0754,
+    "distanceText": "3 min walk",
+    "description": "Delray's most atmospheric dining experience — a landmark 1920s house with an acclaimed seasonal menu and lush garden bar."
+  },
+  {
+    "id": "hurricane-alley",
+    "name": "Hurricane Alley",
+    "category": "restaurant",
+    "lat": 26.4617,
+    "lng": -80.0722,
+    "distanceText": "1 block",
+    "description": "Beloved raw bar and seafood house on Atlantic Avenue — a Delray institution since 1991."
+  },
+  {
+    "id": "le-jardin",
+    "name": "Le Jardin",
+    "category": "restaurant",
+    "lat": 26.4621,
+    "lng": -80.0739,
+    "distanceText": "1 block",
+    "description": "French-inspired garden restaurant with European sensibility and al fresco dining on Atlantic Avenue."
+  },
+  {
     "id": "the-ray",
     "name": "The Ray Hotel",
     "category": "hotel",
     "lat": 26.4619,
     "lng": -80.0728,
     "distanceText": "1 block",
-    "description": "Boutique luxury hotel in the heart of downtown Delray Beach — home to rooftop dining and vibrant social scene."
+    "description": "Boutique luxury hotel in the heart of downtown Delray Beach — home to rooftop dining and a vibrant social scene."
   },
   {
-    "id": "soul-delray",
-    "name": "SOUL Cycle Delray",
-    "category": "fitness",
-    "lat": 26.4615,
-    "lng": -80.0740,
-    "distanceText": "2 min walk",
-    "description": "The premier fitness studio on Atlantic Avenue, steps from Casa Avenida."
-  },
-  {
-    "id": "whole-foods",
-    "name": "Whole Foods Market",
-    "category": "grocery",
-    "lat": 26.4572,
-    "lng": -80.0913,
-    "distanceText": "7 min drive",
-    "description": "Premium grocery and specialty foods, a short drive west of downtown."
-  },
-  {
-    "id": "pbi-airport",
-    "name": "Palm Beach Intl Airport",
-    "category": "entertainment",
-    "lat": 26.6832,
-    "lng": -80.0956,
-    "distanceText": "25 min",
-    "description": "International airport serving Palm Beach County with direct flights to major US and international destinations."
+    "id": "colony-hotel",
+    "name": "The Colony Hotel",
+    "category": "hotel",
+    "lat": 26.4612,
+    "lng": -80.0671,
+    "distanceText": "5 min walk",
+    "description": "Delray Beach's iconic pink landmark hotel since 1926 — a historic seaside retreat steps from the beach."
   },
   {
     "id": "boca-resort",
@@ -90,6 +90,24 @@
     "description": "The iconic five-star resort — golf, spa, beach club, and world-class dining minutes south."
   },
   {
+    "id": "soul-delray",
+    "name": "SoulCycle Delray",
+    "category": "fitness",
+    "lat": 26.4615,
+    "lng": -80.0740,
+    "distanceText": "2 min walk",
+    "description": "The premier fitness studio on Atlantic Avenue, steps from Casa Avenida."
+  },
+  {
+    "id": "delray-tennis",
+    "name": "Delray Beach Tennis Center",
+    "category": "fitness",
+    "lat": 26.4535,
+    "lng": -80.0720,
+    "distanceText": "10 min walk",
+    "description": "World-class tennis facility hosting ATP and WTA events — 14 clay courts and stadium court available to residents."
+  },
+  {
     "id": "equinox-boca",
     "name": "Equinox Boca Raton",
     "category": "fitness",
@@ -99,12 +117,39 @@
     "description": "Luxury fitness club with full spa amenities in Boca Raton."
   },
   {
-    "id": "le-jardin",
-    "name": "Le Jardin",
-    "category": "restaurant",
-    "lat": 26.4621,
-    "lng": -80.0739,
-    "distanceText": "1 block",
-    "description": "French-inspired garden restaurant with European sensibility and al fresco dining on Atlantic Avenue."
+    "id": "whole-foods",
+    "name": "Whole Foods Market",
+    "category": "grocery",
+    "lat": 26.4572,
+    "lng": -80.0913,
+    "distanceText": "7 min drive",
+    "description": "Premium grocery and specialty foods, a short drive west of downtown."
+  },
+  {
+    "id": "trader-joes",
+    "name": "Trader Joe's",
+    "category": "grocery",
+    "lat": 26.4548,
+    "lng": -80.1026,
+    "distanceText": "8 min drive",
+    "description": "Popular specialty grocer with organic and artisan selections — easy access from downtown Delray."
+  },
+  {
+    "id": "old-school-square",
+    "name": "Old School Square",
+    "category": "entertainment",
+    "lat": 26.4625,
+    "lng": -80.0756,
+    "distanceText": "3 min walk",
+    "description": "Delray's beloved cultural campus — concert pavilion, galleries, and community events in a restored 1913 schoolhouse."
+  },
+  {
+    "id": "pbi-airport",
+    "name": "Palm Beach Intl Airport",
+    "category": "entertainment",
+    "lat": 26.6832,
+    "lng": -80.0956,
+    "distanceText": "25 min",
+    "description": "International airport serving Palm Beach County with direct flights to major US and international destinations."
   }
 ]
