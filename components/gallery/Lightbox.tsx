@@ -84,6 +84,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
           <p style={{
             fontFamily: "var(--font-afacad)",
             fontSize: 13,
+            lineHeight: "normal",
             color: "rgba(255,255,255,0.9)",
             margin: 0,
             whiteSpace: "nowrap",
