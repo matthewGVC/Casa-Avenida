@@ -56,21 +56,44 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
         else if (d < -50) onNavigate((currentIndex - 1 + total) % total);
       }}
     >
-      {/* Image — stops click propagation so clicking image doesn't close */}
-      <img
-        src={getGalleryImageSrc(current)}
-        alt={current.alt}
+      {/* Image + caption bar */}
+      <div
         onClick={e => e.stopPropagation()}
-        style={{
-          display: "block",
-          maxWidth: "90vw",
-          maxHeight: "90vh",
-          width: "auto",
-          height: "auto",
-          objectFit: "contain",
-          userSelect: "none",
-        }}
-      />
+        style={{ position: "relative", lineHeight: 0, maxWidth: "90vw", maxHeight: "90vh" }}
+      >
+        <img
+          src={getGalleryImageSrc(current)}
+          alt={current.alt}
+          style={{
+            display: "block",
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+            width: "auto",
+            height: "auto",
+            objectFit: "contain",
+            userSelect: "none",
+          }}
+        />
+        <div style={{
+          position: "absolute",
+          bottom: 0, left: 0, right: 0,
+          background: "rgba(55,58,54,0.82)",
+          backdropFilter: "blur(6px)",
+          padding: "8px 12px",
+        }}>
+          <p style={{
+            fontFamily: "var(--font-afacad)",
+            fontSize: 13,
+            color: "rgba(255,255,255,0.9)",
+            margin: 0,
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}>
+            {current.title}
+          </p>
+        </div>
+      </div>
 
       {/* Close */}
       <button
