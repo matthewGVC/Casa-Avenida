@@ -243,13 +243,18 @@ body {
    Nav scroll transition
 ───────────────────────────────────────────── */
 .nav-transparent {
-  background-color: transparent;
-  transition: background-color 0.3s ease;
+  background: transparent;
+  transition: background 0.4s ease;
 }
 
 .nav-solid {
-  background-color: var(--color-lunar);
-  transition: background-color 0.3s ease;
+  background: linear-gradient(
+    180deg,
+    var(--color-deep) 0%,
+    #22200F 40%,
+    #2A2818 100%
+  );
+  transition: background 0.4s ease;
 }
 
 /* ─────────────────────────────────────────────
