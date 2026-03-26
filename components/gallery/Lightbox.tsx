@@ -13,12 +13,6 @@ interface LightboxProps {
   onNavigate: (index: number) => void;
 }
 
-/**
- * Full-screen lightbox.
- * ESC closes, left/right navigate, swipe on mobile.
- * Image counter and caption always visible.
- * Backdrop fades in; image scales from 0.97 on open/change.
- */
 export default function Lightbox({ images, currentIndex, onClose, onNavigate }: LightboxProps) {
   const total = images.length;
   const current = images[currentIndex];
@@ -32,7 +26,6 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
     onNavigate((currentIndex + 1) % total);
   }, [currentIndex, total, onNavigate]);
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -97,43 +90,38 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
           className="text-white/40 hover:text-sapling transition-colors duration-200 p-2"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path
-              d="M4 4L16 16M16 4L4 16"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
+            <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
       </div>
 
-      {/* Image area */}
-      <div className="relative flex-1 min-h-0 flex items-center justify-center px-16">
-        {/* Prev */}
+      {/* Image area — flex-1 + relative so absolute children fill it correctly */}
+      <div className="relative flex-1 min-h-0">
+
+        {/* Nav — vertically centred within this area */}
         <button
           onClick={prev}
           aria-label="Previous image"
-          className="absolute left-4 lg:left-6 z-10 text-white/40 hover:text-sapling transition-colors duration-200 p-3"
+          className="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-10 text-white/40 hover:text-sapling transition-colors duration-200 p-3"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M15 19L8 12L15 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M15 19L8 12L15 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
 
-        {/* Image - no background box; floats cleanly on the dark overlay */}
+        {/*
+          Image wrapper: absolute inset-0 + px-16 gives a well-defined box
+          that fills the viewport area between top bar and caption.
+          Next.js fill + object-contain then centers the image inside that box.
+          No h-full / w-full needed — absolute positioning provides the dimensions.
+        */}
         <AnimatePresence mode="wait">
           <motion.div
             key={current.id}
-            className="relative w-full h-full"
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.97 }}
+            className="absolute inset-0 px-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.18 }}
           >
             <Image
@@ -148,20 +136,13 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
           </motion.div>
         </AnimatePresence>
 
-        {/* Next */}
         <button
           onClick={next}
           aria-label="Next image"
-          className="absolute right-4 lg:right-6 z-10 text-white/40 hover:text-sapling transition-colors duration-200 p-3"
+          className="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-10 text-white/40 hover:text-sapling transition-colors duration-200 p-3"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M9 5L16 12L9 19"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       </div>
